@@ -1,15 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Menu, X, Search } from "lucide-react";
+import { getAllCategories } from "@/lib/mockData";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Get the first category by order
+  const firstCategory = useMemo(() => {
+    const categories = getAllCategories();
+    return categories.sort((a, b) => a.order - b.order)[0];
+  }, []);
+
   const navigationItems = [
     { name: "HOME", href: "/" },
-    { name: "VOTACION", href: "/voting" },
+    { name: "VOTACION", href: `/voting/${firstCategory?.slug || ""}` },
     { name: "CATEGORIAS", href: "/categories" },
     { name: "FAQ", href: "/faq" },
     { name: "EL TIM", href: "/team" },
@@ -21,7 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-secondary-900 via-secondary-800 to-secondary-900 backdrop-blur-md border-b border-primary-500/30 shadow-lg shadow-primary-500/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-secondary-900 via-secondary-800 to-secondary-900 backdrop-blur-md border-b border-primary-500/30 shadow-lg shadow-primary-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -51,7 +58,7 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center space-x-4">
               <Link
                 href="/auth/signin"
-                className="bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg shadow-accent-500/30 hover:shadow-accent-500/50 hover:scale-105"
+                className="bg-linear-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg shadow-accent-500/30 hover:shadow-accent-500/50 hover:scale-105"
               >
                 Sign In
               </Link>
@@ -88,7 +95,7 @@ const Navbar = () => {
           onClick={toggleMenu}
         />
         <div
-          className={`fixed top-0 left-0 bottom-0 w-80 bg-gradient-to-b from-secondary-900 via-secondary-800 to-secondary-900 shadow-2xl shadow-primary-500/20 border-r border-primary-500/20 transition-transform duration-300 ease-out ${
+          className={`fixed top-0 left-0 bottom-0 w-80 bg-linear-to-b from-secondary-900 via-secondary-800 to-secondary-900 shadow-2xl shadow-primary-500/20 border-r border-primary-500/20 transition-transform duration-300 ease-out ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -121,7 +128,7 @@ const Navbar = () => {
               <Link
                 href="/auth/signin"
                 onClick={toggleMenu}
-                className="block w-full bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white text-center px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg shadow-accent-500/30 hover:shadow-accent-500/50 hover:scale-105"
+                className="block w-full bg-linear-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white text-center px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg shadow-accent-500/30 hover:shadow-accent-500/50 hover:scale-105"
               >
                 Sign In
               </Link>
