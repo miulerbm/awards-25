@@ -1,26 +1,141 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Theme configuration for Tailwind CSS v4 */
+@theme {
+  /* Azul cian brillante para acentos principales (similar al logo TGA) */
+  --color-primary-50: #e0f7ff;
+  --color-primary-100: #b3e7ff;
+  --color-primary-200: #80d6ff;
+  --color-primary-300: #4dc5ff;
+  --color-primary-400: #26b8ff;
+  --color-primary-500: #00a8ff;
+  --color-primary-600: #0095e6;
+  --color-primary-700: #007dc7;
+  --color-primary-800: #0066a8;
+  --color-primary-900: #004a7a;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Azules oscuros para fondos */
+  --color-secondary-50: #e6f1f7;
+  --color-secondary-100: #cce3ef;
+  --color-secondary-200: #99c7df;
+  --color-secondary-300: #527a92;
+  --color-secondary-400: #3d5c6f;
+  --color-secondary-500: #2a4150;
+  --color-secondary-600: #1f3240;
+  --color-secondary-700: #162533;
+  --color-secondary-800: #0f1a26;
+  --color-secondary-900: #0a1118;
+
+  /* Naranja/dorado para CTAs y elementos destacados */
+  --color-accent-500: #ff9500;
+  --color-accent-600: #e68500;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #0a1118;
+  --foreground: #ffffff;
+}
+
+/* Custom utility classes */
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-600 hover:bg-secondary-700 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-accent {
+    @apply bg-accent-500 hover:bg-accent-600 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+  }
+
+  .card-vote {
+    @apply bg-secondary-800/50 backdrop-blur-sm border border-secondary-700 rounded-xl p-6 hover:border-primary-500 transition-all duration-300;
+  }
+
+  .card-vote-selected {
+    @apply bg-primary-500/20 border-primary-400;
+  }
+
+  .bg-awards-gradient {
+    background: linear-gradient(
+      135deg,
+      #0a1118 0%,
+      #0f1a26 30%,
+      #1f3240 70%,
+      #0f1a26 100%
+    );
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(30 41 59);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(71 85 105);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(100 116 139);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid rgb(71 85 105);
+  border-top: 2px solid rgb(20 184 166);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
