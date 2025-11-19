@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import Link from "next/link";
-import { Menu, X, Search } from "lucide-react";
 import { getAllCategories } from "@/lib/mockData";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -66,9 +66,6 @@ const Navbar = () => {
 
             {/* Mobile menu button */}
             <div className="lg:hidden flex items-center space-x-2">
-              <button className="p-2 text-white hover:text-primary-300 transition-colors duration-200">
-                <Search className="w-5 h-5" />
-              </button>
               <button
                 onClick={toggleMenu}
                 className="p-2 text-white hover:text-primary-300 transition-colors duration-200"

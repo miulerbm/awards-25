@@ -6,8 +6,8 @@ import Navbar from "@/components/layout/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Awards Voting Platform",
-  description: "Vote for your favorite games and creators",
+  title: "Plataforma de votaciones kktronicas",
+  description: "Vota por tus favoritxs :)",
 };
 
 export default function RootLayout({
