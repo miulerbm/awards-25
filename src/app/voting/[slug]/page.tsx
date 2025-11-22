@@ -64,7 +64,7 @@ export default function VotingPage() {
   return (
     <div className="min-h-screen bg-awards-gradient">
       {/* Top Navigation Bar */}
-      <div className="sticky top-16 z-40 bg-secondary-900/95 backdrop-blur-md border-b border-primary-500/30 shadow-lg">
+      <div className="sticky top-16 bg-secondary-900/95 backdrop-blur-md border-b border-primary-500/30 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-between h-16">

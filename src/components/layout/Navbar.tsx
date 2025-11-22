@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-secondary-900 via-secondary-800 to-secondary-900 backdrop-blur-md border-b border-primary-500/30 shadow-lg shadow-primary-500/10">
+      <nav className="fixed top-0 left-0 right-0 z-70 bg-linear-to-r from-secondary-900 via-secondary-800 to-secondary-900 backdrop-blur-md border-b border-primary-500/30 shadow-lg shadow-primary-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -85,7 +85,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-60 lg:hidden transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
@@ -94,7 +94,7 @@ const Navbar = () => {
           onClick={toggleMenu}
         />
         <div
-          className={`fixed  top-0 left-0 bottom-0 w-80 h-dvh bg-linear-to-b from-secondary-900 via-secondary-800 to-secondary-900 shadow-2xl shadow-primary-500/20 border-r border-primary-500/20 transition-transform duration-300 ease-out ${
+          className={`fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-linear-to-b from-secondary-900 via-secondary-800 to-secondary-900 shadow-2xl shadow-primary-500/20 border-r border-primary-500/20 transition-transform duration-300 ease-out overflow-y-auto ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
