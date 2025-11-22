@@ -40,7 +40,7 @@ const NomineeCard = ({
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
           <button
             onClick={handleVote}
-            className={`${
+            className={`cursor-pointer ${
               isVoted
                 ? "bg-primary-500 hover:bg-primary-600"
                 : "bg-accent-500 hover:bg-accent-600"

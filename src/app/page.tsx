@@ -19,7 +19,7 @@ export default function HomePage() {
             {/* Text Content */}
             <div className="text-center lg:text-left order-1">
               {/* Countdown Banner */}
-              <div className="inline-block backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-medium mb-4 lg:mb-8">
+              <div className="inline-block text-start backdrop-blur-sm text-white  py-2 rounded-full text-sm font-medium mb-4 lg:mb-8">
                 APERTURA: 10 DE DICIEMBRE
               </div>
 
