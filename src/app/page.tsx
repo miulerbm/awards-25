@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ImageCarousel from "@/components/ImageCarousel";
 
 export default function HomePage() {
   return (
@@ -13,40 +14,65 @@ export default function HomePage() {
           <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent-500/20 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
-          <div className="text-center">
-            {/* Countdown Banner */}
-            <div className="inline-block  backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-medium mb-8">
-              APERTURA: 10 DE DICIEMBRE
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-24 lg:pt-32 pb-0">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-center lg:text-left order-1">
+              {/* Countdown Banner */}
+              <div className="inline-block backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-medium mb-4 lg:mb-8">
+                APERTURA: 10 DE DICIEMBRE
+              </div>
+
+              {/* Main Title */}
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-4 lg:mb-6">
+                <span className="block">THE</span>
+                <span className="block text-primary-400">XINO</span>
+                <span className="block">AWARDS</span>
+              </h1>
+
+              {/* Event Details */}
+              <div className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 lg:mb-8">
+                <div className="mb-2">DICIEMBRE 20</div>
+                <div className="text-base lg:text-lg text-gray-400">
+                  LA CASA DE LOXO?
+                </div>
+              </div>
+
+              {/* Action Buttons - Only on desktop */}
+              <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
+                <Link
+                  href="/auth/signin"
+                  className="btn-accent text-lg px-8 py-4 w-full sm:w-auto"
+                >
+                  INICIA SESIÓN
+                </Link>
+                <Link
+                  href="/categories"
+                  className="btn-primary text-lg px-8 py-4 w-full sm:w-auto"
+                >
+                  VER CATEGORÍAS
+                </Link>
+              </div>
             </div>
-
-            {/* Main Title */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
-              <span className="block">THE</span>
-              <span className="block text-primary-400">DIN</span>
-              <span className="block">AWARDS</span>
-            </h1>
-
-            {/* Event Details */}
-            <div className="text-xl sm:text-2xl text-gray-300 mb-8">
-              <div className="mb-2">DICIEMBRE 20</div>
-              <div className="text-lg text-gray-400">LA CASA DE LOXO?</div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            {/* Action Buttons - Mobile only, before carousel */}
+            <div className="flex lg:hidden flex-col sm:flex-row gap-4 justify-center items-center order-2">
               <Link
                 href="/auth/signin"
-                className="btn-accent text-lg px-8 py-4 w-full sm:w-auto"
+                className="btn-accent text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
               >
                 INICIA SESIÓN
               </Link>
               <Link
                 href="/categories"
-                className="btn-primary text-lg px-8 py-4 w-full sm:w-auto"
+                className="btn-primary text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
               >
                 VER CATEGORÍAS
               </Link>
+            </div>
+
+            {/* Image Carousel */}
+            <div className="relative h-[220px] sm:h-[300px] lg:h-[550px] xl:h-[650px] w-full max-w-[600px] mx-auto order-3">
+              <ImageCarousel />
             </div>
           </div>
         </div>

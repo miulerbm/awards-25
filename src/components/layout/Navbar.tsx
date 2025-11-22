@@ -2,6 +2,7 @@
 
 import { getAllCategories } from "@/lib/mockData";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
@@ -32,13 +33,14 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center space-x-2">
-                <span className="text-white font-bold text-xl hidden sm:block">
-                  AWARDS
-                </span>
-              </Link>
-            </div>
+            <Link href="/">
+              <Image
+                width={100}
+                height={100}
+                src={"/images/logo_awards.webp"}
+                alt="Logo"
+              />
+            </Link>
 
             {/* Navigation Links - Desktop */}
             <div className="hidden lg:flex items-center space-x-8">
@@ -92,7 +94,7 @@ const Navbar = () => {
           onClick={toggleMenu}
         />
         <div
-          className={`fixed top-0 left-0 bottom-0 w-80 bg-linear-to-b from-secondary-900 via-secondary-800 to-secondary-900 shadow-2xl shadow-primary-500/20 border-r border-primary-500/20 transition-transform duration-300 ease-out ${
+          className={`fixed  top-0 left-0 bottom-0 w-80 h-dvh bg-linear-to-b from-secondary-900 via-secondary-800 to-secondary-900 shadow-2xl shadow-primary-500/20 border-r border-primary-500/20 transition-transform duration-300 ease-out ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -129,21 +131,6 @@ const Navbar = () => {
               >
                 Sign In
               </Link>
-            </div>
-
-            {/* Social Links */}
-            <div className="mt-8 pt-8 border-t border-secondary-700/50">
-              <p className="text-secondary-400 text-sm font-medium mb-4">
-                FOLLOW US
-              </p>
-              <div className="flex space-x-4">
-                {/* Placeholder for social icons */}
-                <div className="w-10 h-10 bg-secondary-700/50 rounded border border-secondary-600/50 hover:border-primary-400 hover:bg-primary-500/10 transition-all duration-300 cursor-pointer"></div>
-                <div className="w-10 h-10 bg-secondary-700/50 rounded border border-secondary-600/50 hover:border-primary-400 hover:bg-primary-500/10 transition-all duration-300 cursor-pointer"></div>
-                <div className="w-10 h-10 bg-secondary-700/50 rounded border border-secondary-600/50 hover:border-primary-400 hover:bg-primary-500/10 transition-all duration-300 cursor-pointer"></div>
-                <div className="w-10 h-10 bg-secondary-700/50 rounded border border-secondary-600/50 hover:border-primary-400 hover:bg-primary-500/10 transition-all duration-300 cursor-pointer"></div>
-                <div className="w-10 h-10 bg-secondary-700/50 rounded border border-secondary-600/50 hover:border-primary-400 hover:bg-primary-500/10 transition-all duration-300 cursor-pointer"></div>
-              </div>
             </div>
           </nav>
         </div>

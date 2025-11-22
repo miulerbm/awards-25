@@ -66,14 +66,15 @@ export default function VotingPage() {
       {/* Top Navigation Bar */}
       <div className="sticky top-16 z-40 bg-secondary-900/95 backdrop-blur-md border-b border-primary-500/30 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center justify-between h-16">
             {/* Left - Exit Voting */}
             <Link
               href="/categories"
               className="text-white/90 hover:text-primary-400 font-medium text-sm flex items-center gap-2 transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">EXIT VOTING</span>
+              <span>CATEGORÍAS</span>
             </Link>
 
             {/* Center - Navigation */}
@@ -84,12 +85,12 @@ export default function VotingPage() {
                   className="text-white/70 hover:text-primary-400 transition-colors flex items-center gap-1"
                 >
                   <ChevronLeft className="w-4 h-4" />
-                  <span className="hidden sm:inline">PREVIOUS</span>
+                  <span>ANTERIOR</span>
                 </Link>
               ) : (
                 <div className="text-white/30 flex items-center gap-1">
                   <ChevronLeft className="w-4 h-4" />
-                  <span className="hidden sm:inline">PREVIOUS</span>
+                  <span>ANTERIOR</span>
                 </div>
               )}
 
@@ -97,7 +98,7 @@ export default function VotingPage() {
                 href="/categories"
                 className="text-primary-400 hover:text-primary-300 transition-colors uppercase"
               >
-                VIEW ALL CATEGORIES
+                VER TODAS
               </Link>
 
               {nextCategory ? (
@@ -105,12 +106,12 @@ export default function VotingPage() {
                   href={`/voting/${nextCategory.slug}`}
                   className="text-white/70 hover:text-primary-400 transition-colors flex items-center gap-1"
                 >
-                  <span className="hidden sm:inline">NEXT</span>
+                  <span>SIGUIENTE</span>
                   <ChevronRight className="w-4 h-4" />
                 </Link>
               ) : (
                 <div className="text-white/30 flex items-center gap-1">
-                  <span className="hidden sm:inline">NEXT</span>
+                  <span>SIGUIENTE</span>
                   <ChevronRight className="w-4 h-4" />
                 </div>
               )}
@@ -118,10 +119,51 @@ export default function VotingPage() {
 
             {/* Right - Votes Cast */}
             <div className="text-white font-medium text-sm">
-              <span className="text-white/70">VOTES CAST</span>{" "}
+              <span className="text-white/70">TOTAL</span>{" "}
               <span className="text-primary-400">
                 {votedCategories}/{totalCategories}
               </span>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="flex md:hidden flex-col py-3 gap-3">
+            {/* Top Row - Previous/View All/Next */}
+            <div className="flex items-center justify-center gap-4">
+              {previousCategory ? (
+                <Link
+                  href={`/voting/${previousCategory.slug}`}
+                  className="flex items-center justify-center h-12 rounded-lg text-sm pr-3 text-white hover:text-primary-400 transition-all"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                  ANTERIOR
+                </Link>
+              ) : (
+                <div className="flex items-center justify-center h-12 rounded-lg text-white/30">
+                  <ChevronLeft className="w-6 h-6" />
+                </div>
+              )}
+
+              <Link
+                href="/categories"
+                className="flex-1 text-center px-6 py-3 rounded-lg text-primary-400 font-bold text-sm hover:text-primary-300 transition-all uppercase"
+              >
+                VER TODAS
+              </Link>
+
+              {nextCategory ? (
+                <Link
+                  href={`/voting/${nextCategory.slug}`}
+                  className="flex items-center justify-center h-12 rounded-lg text-sm text-white pl-3 hover:text-primary-400 transition-all"
+                >
+                  SIGUIENTE
+                  <ChevronRight className="w-6 h-6" />
+                </Link>
+              ) : (
+                <div className="flex items-center justify-center h-12 rounded-lg text-white/30">
+                  <ChevronRight className="w-6 h-6" />
+                </div>
+              )}
             </div>
           </div>
         </div>
