@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
 import ImageCarousel from "@/components/ImageCarousel";
+import { useAuth } from "@/providers/AuthProvider";
 
 export default function HomePage() {
+  const { session } = useAuth();
   return (
     <div className="min-h-screen bg-awards-gradient">
       {/* Hero Section */}
@@ -39,36 +42,40 @@ export default function HomePage() {
               </div>
 
               {/* Action Buttons - Only on desktop */}
-              <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
+              {!session && (
+                <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
+                  <Link
+                    href="/auth/login"
+                    className="btn-accent text-lg px-8 py-4 w-full sm:w-auto"
+                  >
+                    INICIA SESIÓN
+                  </Link>
+                  <Link
+                    href="/categories"
+                    className="btn-primary text-lg px-8 py-4 w-full sm:w-auto"
+                  >
+                    VER CATEGORÍAS
+                  </Link>
+                </div>
+              )}
+            </div>
+            {/* Action Buttons - Mobile only, before carousel */}
+            {!session && (
+              <div className="flex lg:hidden flex-col sm:flex-row gap-4 justify-center items-center order-2">
                 <Link
-                  href="/auth/signin"
-                  className="btn-accent text-lg px-8 py-4 w-full sm:w-auto"
+                  href="/auth/login"
+                  className="btn-accent text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
                 >
                   INICIA SESIÓN
                 </Link>
                 <Link
                   href="/categories"
-                  className="btn-primary text-lg px-8 py-4 w-full sm:w-auto"
+                  className="btn-primary text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
                 >
                   VER CATEGORÍAS
                 </Link>
               </div>
-            </div>
-            {/* Action Buttons - Mobile only, before carousel */}
-            <div className="flex lg:hidden flex-col sm:flex-row gap-4 justify-center items-center order-2">
-              <Link
-                href="/auth/signin"
-                className="btn-accent text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
-              >
-                INICIA SESIÓN
-              </Link>
-              <Link
-                href="/categories"
-                className="btn-primary text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
-              >
-                VER CATEGORÍAS
-              </Link>
-            </div>
+            )}
 
             {/* Image Carousel */}
             <div className="relative h-[220px] sm:h-[300px] lg:h-[550px] xl:h-[650px] w-full max-w-[600px] mx-auto order-3">

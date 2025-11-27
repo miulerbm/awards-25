@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
+import { AuthProvider } from "@/providers/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen bg-awards-gradient`}>
-        <Navbar />
-        <ScrollToTop />
-        <main className="pt-16">{children}</main>
+        <AuthProvider>
+          <Navbar />
+          <ScrollToTop />
+          <main className="pt-16">{children}</main>
+        </AuthProvider>
       </body>
     </html>
   );
