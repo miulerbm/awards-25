@@ -34,9 +34,15 @@ export default function LoginForm({ redirectTo = "/" }: LoginFormProps) {
       return;
     }
 
-    // Login exitoso
-    router.push(redirectTo);
-    router.refresh();
+    // ✅ MEJORA: Manejo seguro de navegación después del login
+    try {
+      router.push(redirectTo);
+      router.refresh();
+    } catch (navError) {
+      setError("Error al navegar después del login.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -78,7 +84,11 @@ export default function LoginForm({ redirectTo = "/" }: LoginFormProps) {
       </div>
 
       {error && (
-        <div className="p-3 text-sm text-red-800 bg-red-100 border border-red-200 rounded-lg">
+        <div
+          role="alert"
+          aria-live="polite"
+          className="p-3 text-sm text-red-800 bg-red-100 border border-red-200 rounded-lg"
+        >
           {error}
         </div>
       )}
