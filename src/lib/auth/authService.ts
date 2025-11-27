@@ -77,15 +77,14 @@ export const authService = {
    * Después del login, Google redirigirá a /auth/callback
    *
    * @example
-   * await authService.loginWithGoogle({
-   *   redirectTo: `${window.location.origin}/auth/callback`
-   * })
+   * await authService.loginWithGoogle()
    */
   async loginWithGoogle(options?: GoogleLoginOptions): Promise<AuthResult> {
     const supabase = createClient();
 
-    const redirectTo =
-      options?.redirectTo || `${window.location.origin}/auth/callback`;
+    // ✅ FIX: Usar variable de entorno para evitar problemas con URLs de preview de Netlify
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+    const redirectTo = options?.redirectTo || `${baseUrl}/auth/callback`;
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
