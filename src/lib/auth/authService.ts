@@ -157,8 +157,11 @@ export const authService = {
   async resetPassword(email: string): Promise<{ error: AuthError | null }> {
     const supabase = createClient();
 
+    // ✅ FIX: Usar variable de entorno para evitar problemas con URLs de preview
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/auth/reset-password`,
+      redirectTo: `${baseUrl}/auth/reset-password`,
     });
 
     return { error };
