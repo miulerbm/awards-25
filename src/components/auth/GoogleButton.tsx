@@ -22,9 +22,10 @@ export default function GoogleButton({
     setLoading(true);
     setError(null);
 
-    const { error: authError } = await authService.loginWithGoogle({
-      redirectTo: redirectTo || `${window.location.origin}/auth/callback`,
-    });
+    // ✅ FIX: El redirectTo ahora se maneja en authService usando NEXT_PUBLIC_APP_URL
+    const { error: authError } = await authService.loginWithGoogle(
+      redirectTo ? { redirectTo } : undefined
+    );
 
     if (authError) {
       setError(authError.message);

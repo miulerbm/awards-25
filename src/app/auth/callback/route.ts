@@ -12,7 +12,10 @@ import { NextResponse } from "next/server";
 export async function GET(request: Request) {
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
-  const origin = requestUrl.origin;
+
+  // ✅ FIX: Usar URL base configurada en lugar de origin dinámico
+  // Esto previene problemas con URLs de preview de Netlify (main--, etc.)
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || requestUrl.origin;
 
   if (code) {
     const supabase = await createClient();
@@ -23,7 +26,7 @@ export async function GET(request: Request) {
     if (error) {
       console.error("Error en callback OAuth:", error);
       // Redirigir a login con error
-      return NextResponse.redirect(`${origin}/auth/login?error=oauth_error`);
+      return NextResponse.redirect(`${baseUrl}/auth/login?error=oauth_error`);
     }
   }
 
@@ -37,8 +40,8 @@ export async function GET(request: Request) {
     redirectTo.includes("\\") ||
     /^(?:\/\/|http:\/\/|https:\/\/)/i.test(redirectTo)
   ) {
-    return NextResponse.redirect(`${origin}/`);
+    return NextResponse.redirect(`${baseUrl}/`);
   }
 
-  return NextResponse.redirect(`${origin}${redirectTo}`);
+  return NextResponse.redirect(`${baseUrl}${redirectTo}`);
 }
