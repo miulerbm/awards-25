@@ -26,22 +26,30 @@ export async function GET(request: Request) {
     if (error) {
       console.error("Error en callback OAuth:", error);
       // Redirigir a login con error
-      return NextResponse.redirect(`${baseUrl}/auth/login?error=oauth_error`);
+      return NextResponse.redirect(
+        new URL("/auth/login?error=oauth_error", baseUrl)
+      );
     }
+
+    // ✅ FIX: Después de intercambiar el código, redirigir limpiamente sin el ?code=
+    // Esto evita que el código de OAuth quede visible en la URL del navegador
+    const redirectTo = requestUrl.searchParams.get("redirect_to") || "/";
+
+    // ✅ SEGURIDAD: Validar redirect URL para prevenir Open Redirect attacks
+    if (
+      !redirectTo.startsWith("/") ||
+      redirectTo.startsWith("//") ||
+      redirectTo.includes("\\") ||
+      /^(?:\/\/|http:\/\/|https:\/\/)/i.test(redirectTo)
+    ) {
+      // Usar URL absoluta para asegurar limpieza completa del ?code=
+      return NextResponse.redirect(new URL("/", baseUrl));
+    }
+
+    // Usar URL absoluta para asegurar limpieza completa del ?code=
+    return NextResponse.redirect(new URL(redirectTo, baseUrl));
   }
 
-  // Redirigir al home o a la URL especificada
-  const redirectTo = requestUrl.searchParams.get("redirect_to") || "/";
-
-  // ✅ SEGURIDAD: Validar redirect URL para prevenir Open Redirect attacks
-  if (
-    !redirectTo.startsWith("/") ||
-    redirectTo.startsWith("//") ||
-    redirectTo.includes("\\") ||
-    /^(?:\/\/|http:\/\/|https:\/\/)/i.test(redirectTo)
-  ) {
-    return NextResponse.redirect(`${baseUrl}/`);
-  }
-
-  return NextResponse.redirect(`${baseUrl}${redirectTo}`);
+  // Si no hay código, redirigir al home
+  return NextResponse.redirect(new URL("/", baseUrl));
 }
