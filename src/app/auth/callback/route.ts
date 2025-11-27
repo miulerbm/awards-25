@@ -26,7 +26,9 @@ export async function GET(request: Request) {
     if (error) {
       console.error("Error en callback OAuth:", error);
       // Redirigir a login con error
-      return NextResponse.redirect(`${baseUrl}/auth/login?error=oauth_error`);
+      return NextResponse.redirect(
+        new URL("/auth/login?error=oauth_error", baseUrl)
+      );
     }
 
     // ✅ FIX: Después de intercambiar el código, redirigir limpiamente sin el ?code=
