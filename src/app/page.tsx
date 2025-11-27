@@ -37,7 +37,7 @@ export default function HomePage() {
               <div className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 lg:mb-8">
                 <div className="mb-2">DICIEMBRE 20</div>
                 <div className="text-base lg:text-lg text-gray-400">
-                  LA CASA DE LOXO?
+                  EN ALGUN LUGAR (SI LOXO QUIERE)
                 </div>
               </div>
 
