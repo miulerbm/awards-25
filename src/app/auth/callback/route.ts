@@ -29,5 +29,16 @@ export async function GET(request: Request) {
 
   // Redirigir al home o a la URL especificada
   const redirectTo = requestUrl.searchParams.get("redirect_to") || "/";
+
+  // ✅ SEGURIDAD: Validar redirect URL para prevenir Open Redirect attacks
+  if (
+    !redirectTo.startsWith("/") ||
+    redirectTo.startsWith("//") ||
+    redirectTo.includes("\\") ||
+    /^(?:\/\/|http:\/\/|https:\/\/)/i.test(redirectTo)
+  ) {
+    return NextResponse.redirect(`${origin}/`);
+  }
+
   return NextResponse.redirect(`${origin}${redirectTo}`);
 }
