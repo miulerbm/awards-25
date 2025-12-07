@@ -71,7 +71,7 @@ export default function RegisterForm({ redirectTo = "/" }: RegisterFormProps) {
           type="text"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent text-gray-900"
           placeholder="Juan Pérez"
         />
       </div>
@@ -89,7 +89,7 @@ export default function RegisterForm({ redirectTo = "/" }: RegisterFormProps) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent text-gray-900"
           placeholder="tu@email.com"
         />
       </div>
@@ -108,7 +108,7 @@ export default function RegisterForm({ redirectTo = "/" }: RegisterFormProps) {
           onChange={(e) => setPassword(e.target.value)}
           required
           minLength={6}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent text-gray-900"
           placeholder="••••••••"
         />
         <p className="mt-1 text-xs text-gray-500">Mínimo 6 caracteres</p>
@@ -123,7 +123,7 @@ export default function RegisterForm({ redirectTo = "/" }: RegisterFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-full bg-accent-600 text-white py-2 px-4 rounded-lg hover:bg-accent-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
         {loading ? "Creando cuenta..." : "Crear cuenta"}
       </button>

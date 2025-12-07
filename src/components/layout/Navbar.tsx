@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-secondary-900 via-secondary-800 to-secondary-900 backdrop-blur-md border-b border-primary-500/30 shadow-lg shadow-primary-500/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-secondary-900 via-secondary-800 to-secondary-900 backdrop-blur-md border-b border-primary-500/30 animate-slideDown">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -46,14 +46,15 @@ const Navbar = () => {
 
             {/* Navigation Links - Desktop */}
             <div className="hidden lg:flex items-center space-x-8">
-              {navigationItems.slice(0, 6).map((item) => (
+              {navigationItems.slice(0, 6).map((item, index) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-white/90 hover:text-primary-400 text-sm font-medium transition-all duration-300 relative group"
+                  className="text-white/90 hover:text-accent-500 text-sm font-medium transition-all duration-300 relative group animate-fadeIn"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-400 group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300"></span>
                 </Link>
               ))}
             </div>
@@ -94,13 +95,13 @@ const Navbar = () => {
                 <div className="flex items-center space-x-2">
                   <Link
                     href="/auth/login"
-                    className="text-white/90 hover:text-primary-400 px-4 py-2.5 text-sm font-semibold transition-all duration-300"
+                    className="text-white/90 hover:text-accent-500 px-4 py-2.5 text-sm font-semibold transition-all duration-300"
                   >
                     Iniciar sesión
                   </Link>
                   <Link
                     href="/auth/register"
-                    className="bg-linear-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg shadow-accent-500/30 hover:shadow-accent-500/50 hover:scale-105"
+                    className="bg-linear-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg shadow-accent-600/30 hover:shadow-accent-500/50 hover:scale-105"
                   >
                     Registrarse
                   </Link>
@@ -174,7 +175,7 @@ const Navbar = () => {
                   <Link
                     href={item.href}
                     onClick={toggleMenu}
-                    className="block text-white/90 hover:text-primary-400 text-lg font-medium transition-all duration-300 hover:translate-x-2 hover:bg-primary-500/10 px-4 py-2 rounded-lg"
+                    className="block text-white/90 hover:text-accent-500 text-lg font-medium transition-all duration-300 hover:translate-x-2 hover:bg-accent-500/10 px-4 py-2 rounded-lg"
                   >
                     {item.name}
                   </Link>
@@ -220,7 +221,7 @@ const Navbar = () => {
                   <Link
                     href="/auth/register"
                     onClick={toggleMenu}
-                    className="block w-full bg-linear-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white text-center px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg shadow-accent-500/30 hover:shadow-accent-500/50"
+                    className="block w-full bg-linear-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white text-center px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg shadow-accent-600/30 hover:shadow-accent-500/50"
                   >
                     Registrarse
                   </Link>
