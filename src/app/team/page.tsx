@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { teamMembers } from "./teamData";
 
 const TeamPage = () => {
@@ -45,16 +46,12 @@ const TeamPage = () => {
             >
               {/* Image */}
               <div className="relative h-64 bg-secondary-700/50">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 rounded-full bg-linear-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-white">
-                      {member.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </span>
-                  </div>
-                </div>
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Content */}

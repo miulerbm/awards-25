@@ -8,8 +8,47 @@ import { AuthProvider } from "@/providers/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Plataforma de votaciones kktronicas",
-  description: "Vota por tus favoritxs :)",
+  title: "The Xino Awards - Plataforma de votaciones kktronicas",
+  description:
+    "Vota por tus favoritxs en The Xino Awards. Evento el 20 de diciembre. Celebra la excelencia en los kktronicos.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  ),
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "The Xino Awards",
+    description:
+      "Vota por tus favoritxs en The Xino Awards. Evento el 20 de diciembre.",
+    url: "/",
+    siteName: "The Xino Awards",
+    images: [
+      {
+        url: "/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "The Xino Awards",
+        type: "image/webp",
+      },
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Xino Awards",
+        type: "image/jpeg",
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Xino Awards",
+    description:
+      "Vota por tus favoritxs en The Xino Awards. Evento el 20 de diciembre.",
+    images: ["/images/og-image.webp"],
+  },
 };
 
 export default function RootLayout({
