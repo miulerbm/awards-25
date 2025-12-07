@@ -26,9 +26,9 @@
   --color-secondary-800: #0f1a26;
   --color-secondary-900: #0a1118;
 
-  /* Naranja/dorado para CTAs y elementos destacados */
-  --color-accent-500: #ff9500;
-  --color-accent-600: #e68500;
+  /* Rosa/Magenta para CTAs y elementos destacados */
+  --color-accent-500: #ff81ce;
+  --color-accent-600: #ae36d1;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -119,6 +119,35 @@
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.5s ease-out;
 }
 
 /* Loading spinner */

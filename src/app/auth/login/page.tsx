@@ -37,7 +37,7 @@ export default function LoginPage() {
             <span className="text-gray-600">¿No tienes cuenta? </span>
             <Link
               href="/auth/register"
-              className="text-purple-600 hover:text-purple-700 font-medium"
+              className="text-accent-600 hover:text-accent-500 font-medium"
             >
               Regístrate aquí
             </Link>

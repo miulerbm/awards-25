@@ -60,7 +60,7 @@ export default function LoginForm({ redirectTo = "/" }: LoginFormProps) {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent text-gray-900"
           placeholder="tu@email.com"
         />
       </div>
@@ -78,7 +78,7 @@ export default function LoginForm({ redirectTo = "/" }: LoginFormProps) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent text-gray-900"
           placeholder="••••••••"
         />
       </div>
@@ -96,7 +96,7 @@ export default function LoginForm({ redirectTo = "/" }: LoginFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-full bg-accent-600 text-white py-2 px-4 rounded-lg hover:bg-accent-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
       >
         {loading ? "Iniciando sesión..." : "Iniciar sesión"}
       </button>
