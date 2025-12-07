@@ -101,7 +101,7 @@ const Navbar = () => {
                   </Link>
                   <Link
                     href="/auth/register"
-                    className="bg-linear-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg shadow-accent-600/30 hover:shadow-accent-500/50 hover:scale-105"
+                    className="bg-linear-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg shadow-accent-500/40 hover:shadow-accent-600/50 hover:scale-105"
                   >
                     Registrarse
                   </Link>
@@ -221,7 +221,7 @@ const Navbar = () => {
                   <Link
                     href="/auth/register"
                     onClick={toggleMenu}
-                    className="block w-full bg-linear-to-r from-accent-600 to-accent-500 hover:from-accent-500 hover:to-accent-600 text-white text-center px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg shadow-accent-600/30 hover:shadow-accent-500/50"
+                    className="block w-full bg-linear-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white text-center px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg shadow-accent-500/40 hover:shadow-accent-600/50"
                   >
                     Registrarse
                   </Link>

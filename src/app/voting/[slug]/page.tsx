@@ -57,6 +57,13 @@ export default function VotingPage() {
       return;
     }
 
+    // Verificar si ya votó en esta categoría
+    const hasAlreadyVoted = !!votesByCategory[currentCategory.id];
+    if (hasAlreadyVoted) {
+      showToast("Ya has votado en esta categoría", "error");
+      return;
+    }
+
     // Guardar el nominee que se está votando
     const nominee = nominees.find((n) => n.id === nomineeId);
     if (!nominee) return;
@@ -249,6 +256,7 @@ export default function VotingPage() {
                 isVoted={votesByCategory[currentCategory.id] === nominee.id}
                 isAuthenticated={!!user}
                 isLoading={isSubmitting && votingNomineeId === nominee.id}
+                hasVotedInCategory={!!votesByCategory[currentCategory.id]}
               />
             ))}
           </div>

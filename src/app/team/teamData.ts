@@ -16,8 +16,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Paúl Ramírez",
     role: "Scrum Master",
-    description:
-      "Pregunta ¿Cómo Vamos con el proyecto? cada vez que el CEO le recuerda que está chambeando.",
+    description: `Pregunta "¿Cómo Vamos con el proyecto?" cada vez que el CEO le recuerda que está chambeando.`,
     image: "/images/team/Team-Paul.webp",
   },
   {

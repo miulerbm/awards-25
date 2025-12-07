@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
 import { getAllCategories, getNomineesByCategory } from "@/lib/mockData";
+import { useAuth } from "@/hooks/useAuth";
+import { useVoting } from "@/hooks/useVoting";
 
 export default function CategoriesPage() {
+  const { user } = useAuth();
+  const { votesByCategory } = useVoting(user?.id);
   const categories = getAllCategories();
 
   return (
@@ -22,13 +29,30 @@ export default function CategoriesPage() {
           {categories.map((category) => {
             const nominees = getNomineesByCategory(category.id);
             const nomineeCount = nominees.length;
+            const hasVoted = !!votesByCategory[category.id];
 
             return (
               <Link
                 key={category.id}
                 href={`/voting/${category.slug}`}
-                className="group relative bg-secondary-800/50 backdrop-blur-sm border border-secondary-700 rounded-2xl p-8 hover:border-primary-400 hover:bg-secondary-800/70 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/20"
+                className={`group relative backdrop-blur-sm border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${
+                  hasVoted
+                    ? "bg-primary-500/10 border-primary-400 hover:border-primary-300 hover:bg-primary-500/15 hover:shadow-primary-500/20"
+                    : "bg-secondary-800/50 border-secondary-700 hover:border-primary-400 hover:bg-secondary-800/70 hover:shadow-primary-500/20"
+                }`}
               >
+                {/* Voted Badge */}
+                {hasVoted && (
+                  <div className="absolute top-6 right-6">
+                    <div className="flex items-center gap-2 bg-primary-500/20 border border-primary-400 rounded-full px-4 py-2">
+                      <CheckCircle2 className="w-5 h-5 text-primary-400" />
+                      <span className="text-primary-400 font-semibold text-sm">
+                        VOTADO
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 {/* Content */}
                 <div className="mb-6">
                   <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-primary-400 transition-colors">
@@ -48,7 +72,7 @@ export default function CategoriesPage() {
                     Nominados
                   </div>
                   <div className="text-primary-400 font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
-                    VOTAR →
+                    {hasVoted ? "VER VOTO →" : "VOTAR →"}
                   </div>
                 </div>
               </Link>
