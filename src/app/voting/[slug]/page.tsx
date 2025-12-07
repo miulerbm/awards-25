@@ -57,10 +57,10 @@ export default function VotingPage() {
       return;
     }
 
-    // Verificar si ya votó en esta categoría
-    const hasAlreadyVoted = !!votesByCategory[currentCategory.id];
-    if (hasAlreadyVoted) {
-      showToast("Ya has votado en esta categoría", "error");
+    // Verificar si ya votó por este mismo nominado
+    const currentVote = votesByCategory[currentCategory.id];
+    if (currentVote === nomineeId) {
+      showToast("Ya has votado por este nominado", "error");
       return;
     }
 

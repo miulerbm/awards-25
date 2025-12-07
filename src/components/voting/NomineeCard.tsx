@@ -26,7 +26,7 @@ const NomineeCard = ({
   const pathname = usePathname();
 
   const handleVote = () => {
-    if (onVote && isAuthenticated && !hasVotedInCategory) {
+    if (onVote && isAuthenticated && !isVoted) {
       onVote(nominee.id);
     }
   };
@@ -71,18 +71,12 @@ const NomineeCard = ({
             ) : (
               <button
                 onClick={handleVote}
-                disabled={isLoading || (hasVotedInCategory && !isVoted)}
-                className={`${
-                  hasVotedInCategory && !isVoted
-                    ? "cursor-not-allowed opacity-50 bg-secondary-700"
-                    : "cursor-pointer"
-                } ${
+                disabled={isVoted}
+                className={`cursor-pointer ${
                   isVoted
-                    ? "bg-linear-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 shadow-accent-500/40 hover:shadow-accent-600/50"
-                    : !hasVotedInCategory
-                    ? "bg-primary-500 hover:bg-primary-600 shadow-primary-500/40 hover:shadow-primary-600/50"
-                    : ""
-                } text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg disabled:transform-none disabled:hover:scale-100`}
+                    ? "bg-linear-to-r from-accent-500 to-accent-600 opacity-90 cursor-not-allowed shadow-accent-500/40"
+                    : "bg-primary-500 hover:bg-primary-600 shadow-primary-500/40 hover:shadow-primary-600/50 hover:scale-105"
+                } text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform shadow-lg disabled:transform-none disabled:hover:scale-100`}
                 aria-label={
                   isVoted
                     ? `Ya votaste por ${nominee.title}`
@@ -125,12 +119,10 @@ const NomineeCard = ({
           ) : (
             <button
               onClick={handleVote}
-              disabled={isLoading || (hasVotedInCategory && !isVoted)}
+              disabled={isLoading || isVoted}
               className={`w-full ${
-                hasVotedInCategory && !isVoted
-                  ? "bg-secondary-700 opacity-50 cursor-not-allowed"
-                  : isVoted
-                  ? "bg-linear-to-r from-accent-500 to-accent-600 active:from-accent-600 active:to-accent-700 shadow-accent-500/40"
+                isVoted
+                  ? "bg-linear-to-r from-accent-500 to-accent-600 opacity-90 cursor-not-allowed shadow-accent-500/40"
                   : "bg-primary-500 active:bg-primary-600 shadow-primary-500/40"
               } text-white font-bold py-2.5 px-4 rounded-lg transition-all shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
               aria-label={

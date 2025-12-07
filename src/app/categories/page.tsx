@@ -8,12 +8,28 @@ import { useVoting } from "@/hooks/useVoting";
 
 export default function CategoriesPage() {
   const { user } = useAuth();
-  const { votesByCategory } = useVoting(user?.id);
+  const { votesByCategory, totalVotes } = useVoting(user?.id);
   const categories = getAllCategories();
+  const totalCategories = categories.length;
 
   return (
     <div className="min-h-screen bg-awards-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        {/* Vote Counter - Centered */}
+        {user && (
+          <div className="mb-8 flex justify-center">
+            <div className="inline-flex items-center gap-3 bg-secondary-800/50 backdrop-blur-sm border border-secondary-700 rounded-lg px-6 py-3">
+              <span className="text-white/70 font-medium text-sm">
+                PROGRESO:
+              </span>
+              <span className="text-primary-400 font-bold text-lg">
+                {totalVotes}/{totalCategories}
+              </span>
+              <span className="text-white/50 text-sm">categorías votadas</span>
+            </div>
+          </div>
+        )}
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
@@ -44,12 +60,7 @@ export default function CategoriesPage() {
                 {/* Voted Badge */}
                 {hasVoted && (
                   <div className="absolute top-6 right-6">
-                    <div className="flex items-center gap-2 bg-primary-500/20 border border-primary-400 rounded-full px-4 py-2">
-                      <CheckCircle2 className="w-5 h-5 text-primary-400" />
-                      <span className="text-primary-400 font-semibold text-sm">
-                        VOTADO
-                      </span>
-                    </div>
+                    <CheckCircle2 className="w-5 h-5 text-primary-400" />
                   </div>
                 )}
 
