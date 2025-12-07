@@ -79,7 +79,7 @@ export default function VoteSuccessModal({
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors cursor-pointer"
             aria-label="Cerrar modal"
           >
             <X className="w-6 h-6" />
@@ -133,7 +133,7 @@ export default function VoteSuccessModal({
               {hasNextCategory && (
                 <button
                   onClick={onNextCategory}
-                  className="w-full bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="w-full cursor-pointer bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                 >
                   Próxima Categoría
                 </button>
@@ -141,7 +141,7 @@ export default function VoteSuccessModal({
 
               <button
                 onClick={onClose}
-                className="w-full bg-secondary-700 hover:bg-secondary-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                className="w-full cursor-pointer bg-secondary-700 hover:bg-secondary-600 text-white font-medium py-3 px-6 rounded-lg transition-colors"
               >
                 {hasNextCategory ? "Quedarme Aquí" : "Cerrar"}
               </button>

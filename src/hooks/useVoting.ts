@@ -78,11 +78,12 @@ export function useVoting(userId: string | undefined) {
   };
 
   // Crear un mapa de votos por categoría para fácil acceso
-  const votesByCategory =
-    userVotesData?.data?.votes.reduce((acc, vote) => {
-      acc[vote.categoryId] = vote.nomineeId;
-      return acc;
-    }, {} as Record<string, string>) || {};
+  const votesByCategory = userVotesData?.data?.votes
+    ? userVotesData.data.votes.reduce((acc, vote) => {
+        acc[vote.categoryId] = vote.nomineeId;
+        return acc;
+      }, {} as Record<string, string>)
+    : {};
 
   return {
     // Datos

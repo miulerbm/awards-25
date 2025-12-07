@@ -62,6 +62,7 @@ const NomineeCard = ({
               <Link
                 href={`/auth/login?callbackUrl=${encodeURIComponent(pathname)}`}
                 className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                aria-label="Iniciar sesión para votar"
               >
                 LOGIN
               </Link>
@@ -74,8 +75,13 @@ const NomineeCard = ({
                     ? "bg-accent-500 hover:bg-accent-600"
                     : "bg-primary-500 hover:bg-primary-600"
                 } text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg`}
+                aria-label={
+                  isVoted
+                    ? `Ya votaste por ${nominee.title}`
+                    : `Votar por ${nominee.title}`
+                }
               >
-                {isVoted ? "VOTED" : "VOTE"}
+                {isVoted ? "VOTADO" : "VOTAR"}
               </button>
             )}
           </div>
@@ -84,7 +90,7 @@ const NomineeCard = ({
         {/* Voted Badge */}
         {isVoted && isAuthenticated && !isLoading && (
           <div className="absolute top-4 right-4 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
-            ✓ VOTED
+            ✓ VOTADO
           </div>
         )}
       </div>
@@ -104,6 +110,7 @@ const NomineeCard = ({
             <Link
               href={`/auth/login?callbackUrl=${encodeURIComponent(pathname)}`}
               className="block w-full text-center bg-accent-500 active:bg-accent-600 text-white font-bold py-2.5 px-4 rounded-lg transition-colors shadow-lg"
+              aria-label="Iniciar sesión para votar"
             >
               LOGIN
             </Link>
@@ -116,6 +123,11 @@ const NomineeCard = ({
                   ? "bg-accent-500 active:bg-accent-600"
                   : "bg-primary-500 active:bg-primary-600"
               } text-white font-bold py-2.5 px-4 rounded-lg transition-colors shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+              aria-label={
+                isVoted
+                  ? `Ya votaste por ${nominee.title}`
+                  : `Votar por ${nominee.title}`
+              }
             >
               {isLoading ? (
                 <>
@@ -123,9 +135,9 @@ const NomineeCard = ({
                   <span>VOTANDO...</span>
                 </>
               ) : isVoted ? (
-                "✓ VOTED"
+                "✓ VOTADO"
               ) : (
-                "VOTE"
+                "VOTAR"
               )}
             </button>
           )}

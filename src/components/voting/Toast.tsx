@@ -68,7 +68,7 @@ export function Toast({
 
   return (
     <div
-      className={`fixed top-20 right-4 z-60 max-w-md transition-all duration-300 ${
+      className={`fixed top-20 right-4 z-50 max-w-md transition-all duration-300 ${
         isVisible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
       }`}
     >

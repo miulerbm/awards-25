@@ -23,9 +23,8 @@ export default function VotingPage() {
   const slug = params.slug as string;
 
   const { user } = useAuth();
-  const { votesByCategory, submitVote, isSubmitting, totalVotes } = useVoting(
-    user?.id
-  );
+  const { votesByCategory, submitVoteAsync, isSubmitting, totalVotes } =
+    useVoting(user?.id);
   const { showToast, ToastContainer } = useToast();
 
   const [votingNomineeId, setVotingNomineeId] = useState<string | null>(null);
@@ -65,29 +64,20 @@ export default function VotingPage() {
     setVotingNomineeId(nomineeId);
 
     try {
-      await submitVote(
-        { categoryId: currentCategory.id, nomineeId },
-        {
-          onSuccess: () => {
-            // Mantener el spinner visible un momento antes de mostrar el modal
-            setTimeout(() => {
-              setLastVotedNominee(nominee);
-              setShowSuccessModal(true);
-              setVotingNomineeId(null);
-            }, 300);
-          },
-          onError: (error) => {
-            console.error("Error al votar:", error);
-            showToast(
-              "Error al registrar tu voto. Por favor, intenta más tarde.",
-              "error"
-            );
-            setVotingNomineeId(null);
-          },
-        }
-      );
+      await submitVoteAsync({ categoryId: currentCategory.id, nomineeId });
+
+      // Mantener el spinner visible un momento antes de mostrar el modal
+      setTimeout(() => {
+        setLastVotedNominee(nominee);
+        setShowSuccessModal(true);
+        setVotingNomineeId(null);
+      }, 300);
     } catch (error) {
-      // Catch adicional por si acaso
+      console.error("Error al votar:", error);
+      showToast(
+        "Error al registrar tu voto. Por favor, intenta más tarde.",
+        "error"
+      );
       setVotingNomineeId(null);
     }
   };
