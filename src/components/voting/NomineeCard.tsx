@@ -55,9 +55,9 @@ const NomineeCard = ({
           </div>
         )}
 
-        {/* Vote Button Overlay - Hidden when loading */}
+        {/* Vote Button Overlay Desktop - Hover based (hidden on mobile) */}
         {!isLoading && (
-          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+          <div className="hidden md:flex absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-end justify-center pb-6">
             {!isAuthenticated ? (
               <Link
                 href={`/auth/login?callbackUrl=${encodeURIComponent(pathname)}`}
@@ -71,8 +71,8 @@ const NomineeCard = ({
                 disabled={isLoading}
                 className={`cursor-pointer ${
                   isVoted
-                    ? "bg-primary-500 hover:bg-primary-600"
-                    : "bg-accent-500 hover:bg-accent-600"
+                    ? "bg-accent-500 hover:bg-accent-600"
+                    : "bg-primary-500 hover:bg-primary-600"
                 } text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg`}
               >
                 {isVoted ? "VOTED" : "VOTE"}
@@ -83,7 +83,7 @@ const NomineeCard = ({
 
         {/* Voted Badge */}
         {isVoted && isAuthenticated && !isLoading && (
-          <div className="absolute top-4 right-4 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+          <div className="absolute top-4 right-4 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
             ✓ VOTED
           </div>
         )}
@@ -94,9 +94,42 @@ const NomineeCard = ({
         <h3 className="text-white font-bold text-lg mb-2 line-clamp-2">
           {nominee.title}
         </h3>
-        <p className="text-gray-400 text-sm line-clamp-1">
+        <p className="text-gray-400 text-sm line-clamp-1 mb-3 md:mb-0">
           {nominee.subtitle || nominee.publisher}
         </p>
+
+        {/* Mobile Vote Button - Always visible on mobile, hidden on desktop */}
+        <div className="md:hidden mt-3">
+          {!isAuthenticated ? (
+            <Link
+              href={`/auth/login?callbackUrl=${encodeURIComponent(pathname)}`}
+              className="block w-full text-center bg-accent-500 active:bg-accent-600 text-white font-bold py-2.5 px-4 rounded-lg transition-colors shadow-lg"
+            >
+              LOGIN
+            </Link>
+          ) : (
+            <button
+              onClick={handleVote}
+              disabled={isLoading}
+              className={`w-full ${
+                isVoted
+                  ? "bg-accent-500 active:bg-accent-600"
+                  : "bg-primary-500 active:bg-primary-600"
+              } text-white font-bold py-2.5 px-4 rounded-lg transition-colors shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>VOTANDO...</span>
+                </>
+              ) : isVoted ? (
+                "✓ VOTED"
+              ) : (
+                "VOTE"
+              )}
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
