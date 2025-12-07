@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 import { AuthProvider } from "@/providers/AuthProvider";
+import { QueryProvider } from "@/providers/QueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -67,11 +68,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen bg-awards-gradient`}>
-        <AuthProvider>
-          <Navbar />
-          <ScrollToTop />
-          <main className="pt-16">{children}</main>
-        </AuthProvider>
+        <QueryProvider>
+          <AuthProvider>
+            <Navbar />
+            <ScrollToTop />
+            <main className="pt-16">{children}</main>
+          </AuthProvider>
+        </QueryProvider>
       </body>
     </html>
   );

@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import LoginForm from "@/components/auth/LoginForm";
 import GoogleButton from "@/components/auth/GoogleButton";
 
-export default function LoginPage() {
+function LoginContent() {
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md">
@@ -15,7 +22,7 @@ export default function LoginPage() {
           </div>
 
           {/* Login con Google */}
-          <GoogleButton mode="login" />
+          <GoogleButton mode="login" redirectTo={callbackUrl} />
 
           {/* Divisor */}
           <div className="relative my-6">
@@ -30,13 +37,17 @@ export default function LoginPage() {
           </div>
 
           {/* Login con Email */}
-          <LoginForm />
+          <LoginForm redirectTo={callbackUrl} />
 
           {/* Link a Registro */}
           <div className="mt-6 text-center text-sm">
             <span className="text-gray-600">¿No tienes cuenta? </span>
             <Link
-              href="/auth/register"
+              href={`/auth/register${
+                callbackUrl !== "/"
+                  ? `?callbackUrl=${encodeURIComponent(callbackUrl)}`
+                  : ""
+              }`}
               className="text-accent-600 hover:text-accent-500 font-medium"
             >
               Regístrate aquí
@@ -45,5 +56,28 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center px-4">
+          <div className="w-full max-w-md">
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <div className="text-center">
+                <div className="animate-pulse">
+                  <div className="h-8 bg-gray-200 rounded w-3/4 mx-auto mb-4"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    >
+      <LoginContent />
+    </Suspense>
   );
 }

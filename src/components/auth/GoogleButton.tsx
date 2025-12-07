@@ -13,7 +13,7 @@ interface GoogleButtonProps {
  */
 export default function GoogleButton({
   mode = "login",
-  redirectTo,
+  redirectTo = "/",
 }: GoogleButtonProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -22,10 +22,15 @@ export default function GoogleButton({
     setLoading(true);
     setError(null);
 
-    // ✅ FIX: El redirectTo ahora se maneja en authService usando NEXT_PUBLIC_APP_URL
-    const { error: authError } = await authService.loginWithGoogle(
-      redirectTo ? { redirectTo } : undefined
-    );
+    // Construir la URL de callback con el redirect_to
+    const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
+    const callbackUrl = `${baseUrl}/auth/callback?redirect_to=${encodeURIComponent(
+      redirectTo
+    )}`;
+
+    const { error: authError } = await authService.loginWithGoogle({
+      redirectTo: callbackUrl,
+    });
 
     if (authError) {
       setError(authError.message);

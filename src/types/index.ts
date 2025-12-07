@@ -41,3 +41,41 @@ export interface VoteStats {
   voteCount: number;
   percentage: number;
 }
+
+// Voting API Types
+export interface VoteRequest {
+  body: {
+    userId: string;
+    categoryId: string;
+    nomineeId: string;
+  };
+}
+
+export interface VoteResponse {
+  success: boolean;
+  message: string;
+  data: {
+    id: string;
+    userId: string;
+    categoryId: string;
+    nomineeId: string;
+    createdAt: string;
+    updatedAt: string;
+  };
+}
+
+export interface UserVote {
+  id: string;
+  votedAt: string;
+  nomineeId: string;
+  categoryId: string;
+}
+
+export interface UserVotesResponse {
+  success: boolean;
+  data: {
+    userId: string;
+    totalVotes: number;
+    votes: UserVote[];
+  };
+}
