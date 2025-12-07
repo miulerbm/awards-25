@@ -2,20 +2,29 @@
 
 import { Nominee } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Loader2 } from "lucide-react";
 
 interface NomineeCardProps {
   nominee: Nominee;
   onVote?: (nomineeId: string) => void;
   isVoted?: boolean;
+  isAuthenticated?: boolean;
+  isLoading?: boolean;
 }
 
 const NomineeCard = ({
   nominee,
   onVote,
   isVoted = false,
+  isAuthenticated = false,
+  isLoading = false,
 }: NomineeCardProps) => {
+  const pathname = usePathname();
+
   const handleVote = () => {
-    if (onVote) {
+    if (onVote && isAuthenticated) {
       onVote(nominee.id);
     }
   };
@@ -36,22 +45,44 @@ const NomineeCard = ({
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
 
-        {/* Vote Button Overlay */}
-        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-          <button
-            onClick={handleVote}
-            className={`cursor-pointer ${
-              isVoted
-                ? "bg-primary-500 hover:bg-primary-600"
-                : "bg-accent-500 hover:bg-accent-600"
-            } text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg`}
-          >
-            {isVoted ? "VOTED" : "VOTE"}
-          </button>
-        </div>
+        {/* Loading Overlay - Always visible when loading */}
+        {isLoading && (
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-20 animate-in fade-in duration-200">
+            <div className="flex flex-col items-center gap-3">
+              <Loader2 className="w-12 h-12 text-primary-400 animate-spin" />
+              <span className="text-white font-bold text-lg">VOTANDO...</span>
+            </div>
+          </div>
+        )}
+
+        {/* Vote Button Overlay - Hidden when loading */}
+        {!isLoading && (
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+            {!isAuthenticated ? (
+              <Link
+                href={`/auth/login?callbackUrl=${encodeURIComponent(pathname)}`}
+                className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                LOGIN
+              </Link>
+            ) : (
+              <button
+                onClick={handleVote}
+                disabled={isLoading}
+                className={`cursor-pointer ${
+                  isVoted
+                    ? "bg-primary-500 hover:bg-primary-600"
+                    : "bg-accent-500 hover:bg-accent-600"
+                } text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg`}
+              >
+                {isVoted ? "VOTED" : "VOTE"}
+              </button>
+            )}
+          </div>
+        )}
 
         {/* Voted Badge */}
-        {isVoted && (
+        {isVoted && isAuthenticated && !isLoading && (
           <div className="absolute top-4 right-4 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-full">
             ✓ VOTED
           </div>

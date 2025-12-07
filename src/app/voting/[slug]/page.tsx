@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
@@ -10,12 +10,29 @@ import {
   getNomineesByCategory,
 } from "@/lib/mockData";
 import NomineeCard from "@/components/voting/NomineeCard";
+import VoteSuccessModal from "@/components/voting/VoteSuccessModal";
+import { useToast } from "@/components/voting/Toast";
+import { useAuth } from "@/hooks/useAuth";
+import { useVoting } from "@/hooks/useVoting";
+import { isVotingOpen } from "@/lib/utils/votingDates";
+import type { Nominee } from "@/types";
 
 export default function VotingPage() {
   const params = useParams();
+  const router = useRouter();
   const slug = params.slug as string;
 
-  const [votes, setVotes] = useState<Record<string, string>>({});
+  const { user } = useAuth();
+  const { votesByCategory, submitVote, isSubmitting, totalVotes } = useVoting(
+    user?.id
+  );
+  const { showToast, ToastContainer } = useToast();
+
+  const [votingNomineeId, setVotingNomineeId] = useState<string | null>(null);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [lastVotedNominee, setLastVotedNominee] = useState<Nominee | null>(
+    null
+  );
 
   const categories = getAllCategories();
   const currentCategory = getCategoryBySlug(slug);
@@ -30,20 +47,56 @@ export default function VotingPage() {
     currentIndex < categories.length - 1 ? categories[currentIndex + 1] : null;
 
   const totalCategories = categories.length;
-  const votedCategories = Object.keys(votes).length;
+  const votedCategories = totalVotes;
 
-  const handleVote = (nomineeId: string) => {
-    if (!currentCategory) return;
+  const handleVote = async (nomineeId: string) => {
+    if (!currentCategory || !user) return;
 
-    setVotes((prev) => {
-      const newVotes = { ...prev };
-      if (newVotes[currentCategory.id] === nomineeId) {
-        delete newVotes[currentCategory.id];
-      } else {
-        newVotes[currentCategory.id] = nomineeId;
-      }
-      return newVotes;
-    });
+    // Verificar si las votaciones están abiertas
+    if (!isVotingOpen()) {
+      showToast("Las votaciones están cerradas en este momento", "error");
+      return;
+    }
+
+    // Guardar el nominee que se está votando
+    const nominee = nominees.find((n) => n.id === nomineeId);
+    if (!nominee) return;
+
+    setVotingNomineeId(nomineeId);
+
+    try {
+      await submitVote(
+        { categoryId: currentCategory.id, nomineeId },
+        {
+          onSuccess: () => {
+            // Mantener el spinner visible un momento antes de mostrar el modal
+            setTimeout(() => {
+              setLastVotedNominee(nominee);
+              setShowSuccessModal(true);
+              setVotingNomineeId(null);
+            }, 300);
+          },
+          onError: (error) => {
+            console.error("Error al votar:", error);
+            showToast(
+              "Error al registrar tu voto. Por favor, intenta más tarde.",
+              "error"
+            );
+            setVotingNomineeId(null);
+          },
+        }
+      );
+    } catch (error) {
+      // Catch adicional por si acaso
+      setVotingNomineeId(null);
+    }
+  };
+
+  const handleNextCategory = () => {
+    setShowSuccessModal(false);
+    if (nextCategory) {
+      router.push(`/voting/${nextCategory.slug}`);
+    }
   };
 
   if (!currentCategory) {
@@ -62,146 +115,164 @@ export default function VotingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-awards-gradient">
-      {/* Top Navigation Bar */}
-      <div className="sticky top-16 bg-secondary-900/95 backdrop-blur-md border-b border-primary-500/30 shadow-lg z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-between h-16">
-            {/* Left - Exit Voting */}
-            <Link
-              href="/categories"
-              className="text-white/90 hover:text-primary-400 font-medium text-sm flex items-center gap-2 transition-colors"
-            >
-              <ChevronLeft className="w-4 h-4" />
-              <span>CATEGORÍAS</span>
-            </Link>
+    <>
+      <ToastContainer />
 
-            {/* Center - Navigation */}
-            <div className="flex items-center gap-4 text-sm font-medium">
-              {previousCategory ? (
-                <Link
-                  href={`/voting/${previousCategory.slug}`}
-                  className="text-white/70 hover:text-primary-400 transition-colors flex items-center gap-1"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                  <span>ANTERIOR</span>
-                </Link>
-              ) : (
-                <div className="text-white/30 flex items-center gap-1">
-                  <ChevronLeft className="w-4 h-4" />
-                  <span>ANTERIOR</span>
-                </div>
-              )}
+      {/* Success Modal */}
+      {lastVotedNominee && (
+        <VoteSuccessModal
+          isOpen={showSuccessModal}
+          onClose={() => setShowSuccessModal(false)}
+          onNextCategory={handleNextCategory}
+          category={currentCategory}
+          nominee={lastVotedNominee}
+          hasNextCategory={!!nextCategory}
+        />
+      )}
 
+      <div className="min-h-screen bg-awards-gradient">
+        {/* Top Navigation Bar */}
+        <div className="sticky top-16 bg-secondary-900/95 backdrop-blur-md border-b border-primary-500/30 shadow-lg z-40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center justify-between h-16">
+              {/* Left - Exit Voting */}
               <Link
                 href="/categories"
-                className="text-primary-400 hover:text-primary-300 transition-colors uppercase"
+                className="text-white/90 hover:text-primary-400 font-medium text-sm flex items-center gap-2 transition-colors"
               >
-                VER TODAS
+                <ChevronLeft className="w-4 h-4" />
+                <span>CATEGORÍAS</span>
               </Link>
 
-              {nextCategory ? (
+              {/* Center - Navigation */}
+              <div className="flex items-center gap-4 text-sm font-medium">
+                {previousCategory ? (
+                  <Link
+                    href={`/voting/${previousCategory.slug}`}
+                    className="text-white/70 hover:text-primary-400 transition-colors flex items-center gap-1"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                    <span>ANTERIOR</span>
+                  </Link>
+                ) : (
+                  <div className="text-white/30 flex items-center gap-1">
+                    <ChevronLeft className="w-4 h-4" />
+                    <span>ANTERIOR</span>
+                  </div>
+                )}
+
                 <Link
-                  href={`/voting/${nextCategory.slug}`}
-                  className="text-white/70 hover:text-primary-400 transition-colors flex items-center gap-1"
+                  href="/categories"
+                  className="text-primary-400 hover:text-primary-300 transition-colors uppercase"
                 >
-                  <span>SIGUIENTE</span>
-                  <ChevronRight className="w-4 h-4" />
+                  VER TODAS
                 </Link>
-              ) : (
-                <div className="text-white/30 flex items-center gap-1">
-                  <span>SIGUIENTE</span>
-                  <ChevronRight className="w-4 h-4" />
-                </div>
-              )}
+
+                {nextCategory ? (
+                  <Link
+                    href={`/voting/${nextCategory.slug}`}
+                    className="text-white/70 hover:text-primary-400 transition-colors flex items-center gap-1"
+                  >
+                    <span>SIGUIENTE</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                ) : (
+                  <div className="text-white/30 flex items-center gap-1">
+                    <span>SIGUIENTE</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </div>
+                )}
+              </div>
+
+              {/* Right - Votes Cast */}
+              <div className="text-white font-medium text-sm">
+                <span className="text-white/70">TOTAL</span>{" "}
+                <span className="text-primary-400">
+                  {votedCategories}/{totalCategories}
+                </span>
+              </div>
             </div>
 
-            {/* Right - Votes Cast */}
-            <div className="text-white font-medium text-sm">
-              <span className="text-white/70">TOTAL</span>{" "}
-              <span className="text-primary-400">
-                {votedCategories}/{totalCategories}
-              </span>
+            {/* Mobile Navigation */}
+            <div className="flex md:hidden flex-col py-3 gap-3">
+              {/* Top Row - Previous/View All/Next */}
+              <div className="flex items-center justify-center gap-4">
+                {previousCategory ? (
+                  <Link
+                    href={`/voting/${previousCategory.slug}`}
+                    className="flex items-center justify-center h-12 rounded-lg text-sm pr-3 text-white hover:text-primary-400 transition-all"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                    ANTERIOR
+                  </Link>
+                ) : (
+                  <div className="flex items-center justify-center h-12 rounded-lg text-white/30">
+                    <ChevronLeft className="w-6 h-6" />
+                  </div>
+                )}
+
+                <Link
+                  href="/categories"
+                  className="flex-1 text-center px-6 py-3 rounded-lg text-primary-400 font-bold text-sm hover:text-primary-300 transition-all uppercase"
+                >
+                  VER TODAS
+                </Link>
+
+                {nextCategory ? (
+                  <Link
+                    href={`/voting/${nextCategory.slug}`}
+                    className="flex items-center justify-center h-12 rounded-lg text-sm text-white pl-3 hover:text-primary-400 transition-all"
+                  >
+                    SIGUIENTE
+                    <ChevronRight className="w-6 h-6" />
+                  </Link>
+                ) : (
+                  <div className="flex items-center justify-center h-12 rounded-lg text-white/30">
+                    <ChevronRight className="w-6 h-6" />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-
-          {/* Mobile Navigation */}
-          <div className="flex md:hidden flex-col py-3 gap-3">
-            {/* Top Row - Previous/View All/Next */}
-            <div className="flex items-center justify-center gap-4">
-              {previousCategory ? (
-                <Link
-                  href={`/voting/${previousCategory.slug}`}
-                  className="flex items-center justify-center h-12 rounded-lg text-sm pr-3 text-white hover:text-primary-400 transition-all"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                  ANTERIOR
-                </Link>
-              ) : (
-                <div className="flex items-center justify-center h-12 rounded-lg text-white/30">
-                  <ChevronLeft className="w-6 h-6" />
-                </div>
-              )}
-
-              <Link
-                href="/categories"
-                className="flex-1 text-center px-6 py-3 rounded-lg text-primary-400 font-bold text-sm hover:text-primary-300 transition-all uppercase"
-              >
-                VER TODAS
-              </Link>
-
-              {nextCategory ? (
-                <Link
-                  href={`/voting/${nextCategory.slug}`}
-                  className="flex items-center justify-center h-12 rounded-lg text-sm text-white pl-3 hover:text-primary-400 transition-all"
-                >
-                  SIGUIENTE
-                  <ChevronRight className="w-6 h-6" />
-                </Link>
-              ) : (
-                <div className="flex items-center justify-center h-12 rounded-lg text-white/30">
-                  <ChevronRight className="w-6 h-6" />
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-        {/* Category Header */}
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 uppercase">
-            {currentCategory.title}
-          </h1>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            {currentCategory.description}
-          </p>
         </div>
 
-        {/* Nominees Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
-          {nominees.map((nominee) => (
-            <NomineeCard
-              key={nominee.id}
-              nominee={nominee}
-              onVote={handleVote}
-              isVoted={votes[currentCategory.id] === nominee.id}
-            />
-          ))}
-        </div>
-
-        {/* No Nominees Message */}
-        {nominees.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-gray-400 text-lg">
-              No nominees available for this category yet.
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+          {/* Category Header */}
+          <div className="mb-12 text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 uppercase">
+              {currentCategory.title}
+            </h1>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+              {currentCategory.description}
             </p>
           </div>
-        )}
+
+          {/* Nominees Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
+            {nominees.map((nominee) => (
+              <NomineeCard
+                key={nominee.id}
+                nominee={nominee}
+                onVote={handleVote}
+                isVoted={votesByCategory[currentCategory.id] === nominee.id}
+                isAuthenticated={!!user}
+                isLoading={isSubmitting && votingNomineeId === nominee.id}
+              />
+            ))}
+          </div>
+
+          {/* No Nominees Message */}
+          {nominees.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-gray-400 text-lg">
+                No nominees available for this category yet.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,8 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import LoginForm from "@/components/auth/LoginForm";
 import GoogleButton from "@/components/auth/GoogleButton";
 
 export default function LoginPage() {
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-md">
@@ -15,7 +21,7 @@ export default function LoginPage() {
           </div>
 
           {/* Login con Google */}
-          <GoogleButton mode="login" />
+          <GoogleButton mode="login" redirectTo={callbackUrl} />
 
           {/* Divisor */}
           <div className="relative my-6">
@@ -30,13 +36,17 @@ export default function LoginPage() {
           </div>
 
           {/* Login con Email */}
-          <LoginForm />
+          <LoginForm redirectTo={callbackUrl} />
 
           {/* Link a Registro */}
           <div className="mt-6 text-center text-sm">
             <span className="text-gray-600">¿No tienes cuenta? </span>
             <Link
-              href="/auth/register"
+              href={`/auth/register${
+                callbackUrl !== "/"
+                  ? `?callbackUrl=${encodeURIComponent(callbackUrl)}`
+                  : ""
+              }`}
               className="text-accent-600 hover:text-accent-500 font-medium"
             >
               Regístrate aquí
