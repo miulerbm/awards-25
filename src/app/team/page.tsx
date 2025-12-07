@@ -25,9 +25,9 @@ const TeamPage = () => {
             </h2>
             <p className="text-white/80 leading-relaxed mb-4">
               Somos un equipo diverso de profesionales dedicados a celebrar la
-              excelencia los kktrónicos en todas sus formas. Nuestra misión es
-              proporcionar una plataforma justa, transparente y accesible donde
-              las voces de la comunidad puedan ser escuchadas.
+              excelencia de los kktrónicos en todas sus formas. Nuestra misión
+              es proporcionar una plataforma justa, transparente y accesible
+              donde las voces de la comunidad puedan ser escuchadas.
             </p>
             <p className="text-white/80 leading-relaxed">
               Con experiencia en tecnología, diseño, contenido y análisis de
