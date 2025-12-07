@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import ImageCarousel from "@/components/ImageCarousel";
 import { useAuth } from "@/providers/AuthProvider";
+import ImageAwards from "@/components/ImageAwards";
 
 export default function HomePage() {
   const { session } = useAuth();
@@ -79,7 +79,7 @@ export default function HomePage() {
 
             {/* Image Carousel */}
             <div className="relative h-[220px] sm:h-[300px] lg:h-[550px] xl:h-[650px] w-full max-w-[600px] mx-auto order-3">
-              <ImageCarousel />
+              <ImageAwards />
             </div>
           </div>
         </div>

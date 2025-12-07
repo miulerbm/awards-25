@@ -26,7 +26,7 @@ const NomineeCard = ({
     `https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop&q=80`;
 
   return (
-    <div className="group relative bg-secondary-800/50 rounded-lg overflow-hidden border border-secondary-700 transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-500/20 hover:border-primary-400">
+    <div className="group relative bg-secondary-800/50 rounded-lg overflow-hidden border border-secondary-700 transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-500/20 hover:border-primary-400 z-10">
       {/* Image Container */}
       <div className="relative aspect-4/3 overflow-hidden bg-secondary-900">
         <Image

@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-70 bg-linear-to-r from-secondary-900 via-secondary-800 to-secondary-900 backdrop-blur-md border-b border-primary-500/30 shadow-lg shadow-primary-500/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-secondary-900 via-secondary-800 to-secondary-900 backdrop-blur-md border-b border-primary-500/30 shadow-lg shadow-primary-500/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -188,19 +188,6 @@ const Navbar = () => {
               ) : user ? (
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 text-white/90 px-4 py-2">
-                    {user.avatarUrl ? (
-                      <Image
-                        src={user.avatarUrl}
-                        alt={user.fullName || "User"}
-                        width={48}
-                        height={48}
-                        className="rounded-full border-2 border-primary-400/50"
-                      />
-                    ) : (
-                      <div className="w-12 h-12 rounded-full bg-primary-500 flex items-center justify-center">
-                        <User className="w-6 h-6 text-white" />
-                      </div>
-                    )}
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium truncate">
                         {user.fullName || "Usuario"}
