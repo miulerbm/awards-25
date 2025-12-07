@@ -12,6 +12,7 @@ interface NomineeCardProps {
   isVoted?: boolean;
   isAuthenticated?: boolean;
   isLoading?: boolean;
+  hasVotedInCategory?: boolean;
 }
 
 const NomineeCard = ({
@@ -20,11 +21,12 @@ const NomineeCard = ({
   isVoted = false,
   isAuthenticated = false,
   isLoading = false,
+  hasVotedInCategory = false,
 }: NomineeCardProps) => {
   const pathname = usePathname();
 
   const handleVote = () => {
-    if (onVote && isAuthenticated) {
+    if (onVote && isAuthenticated && !isVoted) {
       onVote(nominee.id);
     }
   };
@@ -61,7 +63,7 @@ const NomineeCard = ({
             {!isAuthenticated ? (
               <Link
                 href={`/auth/login?callbackUrl=${encodeURIComponent(pathname)}`}
-                className="bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="bg-linear-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-accent-500/40 hover:shadow-accent-600/50"
                 aria-label="Iniciar sesión para votar"
               >
                 LOGIN
@@ -69,12 +71,12 @@ const NomineeCard = ({
             ) : (
               <button
                 onClick={handleVote}
-                disabled={isLoading}
+                disabled={isVoted}
                 className={`cursor-pointer ${
                   isVoted
-                    ? "bg-accent-500 hover:bg-accent-600"
-                    : "bg-primary-500 hover:bg-primary-600"
-                } text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg`}
+                    ? "bg-linear-to-r from-accent-500 to-accent-600 opacity-90 cursor-not-allowed shadow-accent-500/40"
+                    : "bg-primary-500 hover:bg-primary-600 shadow-primary-500/40 hover:shadow-primary-600/50 hover:scale-105"
+                } text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform shadow-lg disabled:transform-none disabled:hover:scale-100`}
                 aria-label={
                   isVoted
                     ? `Ya votaste por ${nominee.title}`
@@ -109,7 +111,7 @@ const NomineeCard = ({
           {!isAuthenticated ? (
             <Link
               href={`/auth/login?callbackUrl=${encodeURIComponent(pathname)}`}
-              className="block w-full text-center bg-accent-500 active:bg-accent-600 text-white font-bold py-2.5 px-4 rounded-lg transition-colors shadow-lg"
+              className="block w-full text-center bg-linear-to-r from-accent-500 to-accent-600 active:from-accent-600 active:to-accent-700 text-white font-bold py-2.5 px-4 rounded-lg transition-all shadow-lg shadow-accent-500/40"
               aria-label="Iniciar sesión para votar"
             >
               LOGIN
@@ -117,12 +119,12 @@ const NomineeCard = ({
           ) : (
             <button
               onClick={handleVote}
-              disabled={isLoading}
+              disabled={isLoading || isVoted}
               className={`w-full ${
                 isVoted
-                  ? "bg-accent-500 active:bg-accent-600"
-                  : "bg-primary-500 active:bg-primary-600"
-              } text-white font-bold py-2.5 px-4 rounded-lg transition-colors shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+                  ? "bg-linear-to-r from-accent-500 to-accent-600 opacity-90 cursor-not-allowed shadow-accent-500/40"
+                  : "bg-primary-500 active:bg-primary-600 shadow-primary-500/40"
+              } text-white font-bold py-2.5 px-4 rounded-lg transition-all shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
               aria-label={
                 isVoted
                   ? `Ya votaste por ${nominee.title}`

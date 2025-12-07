@@ -96,7 +96,7 @@ export default function LoginForm({ redirectTo = "/" }: LoginFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-accent-600 text-white py-2 px-4 rounded-lg hover:bg-accent-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="w-full bg-linear-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white py-2 px-4 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all shadow-lg shadow-accent-500/40"
       >
         {loading ? "Iniciando sesión..." : "Iniciar sesión"}
       </button>

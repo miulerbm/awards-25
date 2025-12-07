@@ -27,8 +27,10 @@
   --color-secondary-900: #0a1118;
 
   /* Rosa/Magenta para CTAs y elementos destacados */
-  --color-accent-500: #ff81ce;
-  --color-accent-600: #ae36d1;
+  --color-accent-400: #ff6bb8;
+  --color-accent-500: #e91e8c;
+  --color-accent-600: #c71585;
+  --color-accent-700: #9a1166;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -50,7 +52,7 @@
   }
 
   .btn-accent {
-    @apply bg-accent-500 hover:bg-accent-600 text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+    @apply bg-linear-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg shadow-accent-500/30 hover:shadow-accent-600/40 cursor-pointer;
   }
 
   .card-vote {
@@ -148,6 +150,21 @@
 
 .animate-slideDown {
   animation: slideDown 0.5s ease-out;
+}
+
+@keyframes heroImage {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-hero-image {
+  animation: heroImage 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Loading spinner */

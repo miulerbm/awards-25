@@ -11,9 +11,9 @@ const TeamPage = () => {
             Nuestro Equipo
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            Conoce a las personas apasionadas que hacen posible esta plataforma.
-            Un equipo multidisciplinario comprometido con crear la mejor
-            experiencia de votación.
+            Conoce a las personas que hacen posible esta plataforma. Un equipo
+            multidisciplinario comprometido con crear la mejor experiencia de
+            votación.
           </p>
         </div>
 
@@ -25,9 +25,9 @@ const TeamPage = () => {
             </h2>
             <p className="text-white/80 leading-relaxed mb-4">
               Somos un equipo diverso de profesionales dedicados a celebrar la
-              excelencia en todas sus formas. Nuestra misión es proporcionar una
-              plataforma justa, transparente y accesible donde las voces de la
-              comunidad puedan ser escuchadas.
+              excelencia los kktrónicos en todas sus formas. Nuestra misión es
+              proporcionar una plataforma justa, transparente y accesible donde
+              las voces de la comunidad puedan ser escuchadas.
             </p>
             <p className="text-white/80 leading-relaxed">
               Con experiencia en tecnología, diseño, contenido y análisis de
