@@ -21,18 +21,22 @@ export const metadata: Metadata = {
     title: "The Xino Awards",
     description:
       "Vota por tus favoritxs en The Xino Awards. Evento el 20 de diciembre.",
-    url: "/",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
     siteName: "The Xino Awards",
     images: [
       {
-        url: "/images/og-image.webp",
+        url: `${
+          process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+        }/images/og-image.webp`,
         width: 1200,
         height: 630,
         alt: "The Xino Awards",
         type: "image/webp",
       },
       {
-        url: "/images/og-image.jpg",
+        url: `${
+          process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+        }/images/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "The Xino Awards",
@@ -47,7 +51,11 @@ export const metadata: Metadata = {
     title: "The Xino Awards",
     description:
       "Vota por tus favoritxs en The Xino Awards. Evento el 20 de diciembre.",
-    images: ["/images/og-image.webp"],
+    images: [
+      `${
+        process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+      }/images/og-image.webp`,
+    ],
   },
 };
 
