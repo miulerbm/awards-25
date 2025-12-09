@@ -673,13 +673,13 @@ export const mockNominees: Nominee[] = [
     order: 3,
   },
 
-  {
-    id: "suc-3-1",
-    categoryId: "viajecito-ano",
-    title: "Chorlos llevando a su flaquita a conocer a su ex en Cuzco",
-    imageUrl: "",
-    order: 1,
-  },
+  // {
+  //   id: "suc-3-1",
+  //   categoryId: "viajecito-ano",
+  //   title: "Chorlos llevando a su flaquita a conocer a su ex en Cuzco",
+  //   imageUrl: "",
+  //   order: 1,
+  // },
   {
     id: "suc-3-2",
     categoryId: "viajecito-ano",
