@@ -42,40 +42,36 @@ export default function HomePage() {
               </div>
 
               {/* Action Buttons - Only on desktop */}
-              {!session && (
-                <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
-                  <Link
-                    href="/auth/login"
-                    className="btn-accent text-lg px-8 py-4 w-full sm:w-auto"
-                  >
-                    INICIA SESIÓN
-                  </Link>
-                  <Link
-                    href="/categories"
-                    className="btn-primary text-lg px-8 py-4 w-full sm:w-auto"
-                  >
-                    VER CATEGORÍAS
-                  </Link>
-                </div>
-              )}
-            </div>
-            {/* Action Buttons - Mobile only, before carousel */}
-            {!session && (
-              <div className="flex lg:hidden flex-col sm:flex-row gap-4 justify-center items-center order-2">
+              <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12">
                 <Link
-                  href="/auth/login"
-                  className="btn-accent text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
+                  href={session ? "/voting/mejor-jugador-left" : "/auth/login"}
+                  className="btn-accent text-lg px-8 py-4 w-full sm:w-auto"
                 >
-                  INICIA SESIÓN
+                  {session ? "VOTAR" : "INICIA SESIÓN"}
                 </Link>
                 <Link
                   href="/categories"
-                  className="btn-primary text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
+                  className="btn-primary text-lg px-8 py-4 w-full sm:w-auto"
                 >
                   VER CATEGORÍAS
                 </Link>
               </div>
-            )}
+            </div>
+            {/* Action Buttons - Mobile only, before carousel */}
+            <div className="flex lg:hidden flex-col sm:flex-row gap-4 justify-center items-center order-2">
+              <Link
+                href={session ? "/voting/mejor-jugador-left" : "/auth/login"}
+                className="btn-accent text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
+              >
+                {session ? "VOTAR" : "INICIA SESIÓN"}
+              </Link>
+              <Link
+                href="/categories"
+                className="btn-primary text-lg px-8 py-4 w-3/4 sm:w-auto text-center"
+              >
+                VER CATEGORÍAS
+              </Link>
+            </div>
 
             {/* Image Carousel */}
             <div className="relative h-[220px] sm:h-[300px] lg:h-[550px] xl:h-[650px] w-full max-w-[600px] mx-auto order-3">
