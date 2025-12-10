@@ -203,7 +203,7 @@ const Navbar = () => {
                       signOut();
                       toggleMenu();
                     }}
-                    className="flex items-center justify-center space-x-2 w-full bg-red-600 hover:bg-red-700 text-white px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300"
+                    className="flex items-center justify-center space-x-2 w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-300 select-none touch-manipulation"
                   >
                     <LogOut className="w-5 h-5" />
                     <span>Cerrar sesión</span>
