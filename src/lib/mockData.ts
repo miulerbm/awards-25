@@ -305,14 +305,16 @@ export const mockNominees: Nominee[] = [
     id: "left-1-1",
     categoryId: "mejor-jugador-left",
     title: "Mattos - Cuando está calmado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mejor%20jugador%20de%20Left%20-%20Mattos.jpg",
     order: 1,
   },
   {
     id: "left-1-2",
     categoryId: "mejor-jugador-left",
     title: "Ñeñe - Cuando no está jugando",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mejor%20jugador%20de%20Left%20-%20Nene.jpg",
     order: 2,
   },
 
@@ -320,14 +322,16 @@ export const mockNominees: Nominee[] = [
     id: "left-2-1",
     categoryId: "mas-manco-left",
     title: "Mattos - Enojado con su Team",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20manco%20del%20Left%20-%20Mattos.jpg",
     order: 1,
   },
   {
     id: "left-2-2",
     categoryId: "mas-manco-left",
     title: "Columba - Siempre",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20manco%20del%20Left%20-%20Columna.jpg",
     order: 2,
   },
 
@@ -335,28 +339,32 @@ export const mockNominees: Nominee[] = [
     id: "left-3-1",
     categoryId: "mas-odiado-left",
     title: "Jack - No crea sala de left",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20odiado%20del%20Left%20-%20Jack%20x1.jpg",
     order: 1,
   },
   {
     id: "left-3-2",
     categoryId: "mas-odiado-left",
     title: "Jack x2 - Ya no es el mismo que antes :c",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20odiado%20del%20Left%20-%20Jack%20x2.jpg",
     order: 2,
   },
   {
     id: "left-3-3",
     categoryId: "mas-odiado-left",
     title: "Balto - Que no ingresa al left",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20odiado%20del%20Left%20-%20Balto.jpg",
     order: 3,
   },
   {
     id: "left-3-4",
     categoryId: "mas-odiado-left",
     title: "El Ñeñe - Cuando entra Balto se va xd",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20odiado%20del%20Left%20-%20Nene.jpg",
     order: 4,
   },
 
@@ -364,21 +372,24 @@ export const mockNominees: Nominee[] = [
     id: "left-4-1",
     categoryId: "humero-left",
     title: "Jack - No crea sala desde Altamar",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20humero%20del%20Left%20del%20ano%20-%20Jack.jpg",
     order: 1,
   },
   {
     id: "left-4-2",
     categoryId: "humero-left",
     title: "Balto - Pone hora y fecha, pero no ingresa",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20humero%20del%20Left%20del%20ano%20-%20Balto.jpg",
     order: 2,
   },
   {
     id: "left-4-3",
     categoryId: "humero-left",
     title: "Convocatorias Don Ñeñito - Convoca y se va",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20humero%20del%20Left%20del%20ano%20-%20Nene.jpg",
     order: 3,
   },
 
@@ -387,35 +398,40 @@ export const mockNominees: Nominee[] = [
     id: "int-1-1",
     categoryId: "extranjero-ano",
     title: "Paul - Du Brasil",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20extranjero%20del%20ano%20-%20Paul.jpg",
     order: 1,
   },
   {
     id: "int-1-2",
     categoryId: "extranjero-ano",
     title: "Cristian - Du Brasil",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20extranjero%20del%20ano%20-%20Cristian.jpg",
     order: 2,
   },
   {
     id: "int-1-3",
     categoryId: "extranjero-ano",
     title: "Orbegoso - Ciudadano del mundo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20extranjero%20del%20ano%20-%20Orbegoso.jpg",
     order: 3,
   },
   {
     id: "int-1-4",
     categoryId: "extranjero-ano",
     title: "Xino Pucallpino Puñetino - Pucallpa",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20extranjero%20del%20ano%20-%20Angel.jpg",
     order: 4,
   },
   {
     id: "int-1-5",
     categoryId: "extranjero-ano",
     title: "Loxo - Huamasexo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20extranjero%20del%20ano%20-%20Luis.jpg",
     order: 5,
   },
 
@@ -423,35 +439,40 @@ export const mockNominees: Nominee[] = [
     id: "int-2-1",
     categoryId: "gymrat-ano",
     title: "Ángel Turrones de MAF - Xino",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20gymrat%20del%20Ano%20-%20Angel.jpg",
     order: 1,
   },
   {
     id: "int-2-2",
     categoryId: "gymrat-ano",
     title: "Mattos - Roomie de Xino",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20gymrat%20del%20Ano%20-%20Mattos.jpg",
     order: 2,
   },
   {
     id: "int-2-3",
     categoryId: "gymrat-ano",
     title: "Andy Rojas - El Baki Provinciano",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20gymrat%20del%20Ano%20-%20Andy.jpg",
     order: 3,
   },
   {
     id: "int-2-4",
     categoryId: "gymrat-ano",
     title: "Loxo Sánchez - Hanayama Peruano",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20gymrat%20del%20Ano%20-%20Luis.jpg",
     order: 4,
   },
   {
     id: "int-2-5",
     categoryId: "gymrat-ano",
     title: "Cristian Juárez - Ex Xuxi",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20gymrat%20del%20Ano%20-%20Cristian.jpg",
     order: 5,
   },
 
@@ -459,35 +480,40 @@ export const mockNominees: Nominee[] = [
     id: "int-3-1",
     categoryId: "mas-kbral",
     title: "Xino Turrones",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20kbral%20del%20ano%20-%20Angel%20x1.jpg",
     order: 1,
   },
   {
     id: "int-3-2",
     categoryId: "mas-kbral",
     title: "Xino Turrones - X2",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20kbral%20del%20ano%20-%20Angel%20x2.jpg",
     order: 2,
   },
   {
     id: "int-3-3",
     categoryId: "mas-kbral",
     title: "Xino Turrones - X3",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20kbral%20del%20ano%20-%20Angel%20x3.jpg",
     order: 3,
   },
   {
     id: "int-3-4",
     categoryId: "mas-kbral",
     title: "Paul - Fan de Jason Momoa en Tanga",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20kbral%20del%20ano%20-%20Paul.jpg",
     order: 4,
   },
   {
     id: "int-3-5",
     categoryId: "mas-kbral",
     title: "Luxo - Fan de marchas LGTB",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20kbral%20del%20ano%20-%20Luis.jpg",
     order: 5,
   },
 
@@ -495,21 +521,24 @@ export const mockNominees: Nominee[] = [
     id: "int-4-1",
     categoryId: "duazo-ano",
     title: "El Nero y el Nero José - Hijo y Padre",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20duazo%20de%20la%20ptmr%20del%20Ano%20-%20Miuler%20y%20Jose.jpg",
     order: 1,
   },
   {
     id: "int-4-2",
     categoryId: "duazo-ano",
     title: "Paul y Jason Momoa en Tanga - Fetiche",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20duazo%20de%20la%20ptmr%20del%20Ano%20-%20Paul%20y%20Momoa.jpg",
     order: 2,
   },
   {
     id: "int-4-3",
     categoryId: "duazo-ano",
     title: "Xino y Mattos - Roomies",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20duazo%20de%20la%20ptmr%20del%20Ano%20-%20Angel%20y%20Mattos.jpg",
     order: 3,
   },
 
@@ -517,56 +546,64 @@ export const mockNominees: Nominee[] = [
     id: "int-5-1",
     categoryId: "parejita-ano",
     title: "Parejita Feminista: Cristian y su waifu",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20parejita%20del%20ano%20-%20Cristian.jpg",
     order: 1,
   },
   {
     id: "int-5-2",
     categoryId: "parejita-ano",
     title: "Luxo y su trans de la Victoria",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20parejita%20del%20ano%20-%20Luis%20y%20Trans.jpg",
     order: 2,
   },
   {
     id: "int-5-3",
     categoryId: "parejita-ano",
     title: "Andys y su otaku",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20parejita%20del%20ano%20-%20Andy%20y%20Otaku.jpg",
     order: 3,
   },
   {
     id: "int-5-4",
     categoryId: "parejita-ano",
     title: "Jack el marinero y su flaquita",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20parejita%20del%20ano%20-%20Jack.jpg",
     order: 4,
   },
   {
     id: "int-5-5",
     categoryId: "parejita-ano",
     title: "Gym Roomies: Xino y Mattos",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20parejita%20del%20ano%20-%20Xino%20y%20Mattos.jpg",
     order: 5,
   },
   {
     id: "int-5-6",
     categoryId: "parejita-ano",
     title: "Aldo y su Huamachuquina",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20parejita%20del%20ano%20-%20Aldo.jpg",
     order: 6,
   },
   {
     id: "int-5-7",
     categoryId: "parejita-ano",
     title: "Xorlos y su flaquita",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20parejita%20del%20ano%20-%20Chorlos.jpg",
     order: 7,
   },
   {
     id: "int-5-8",
     categoryId: "parejita-ano",
     title: "Xino y Claudia",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20parejita%20del%20ano%20-%20Xino%20y%20Claudia.jpg",
     order: 8,
   },
 
@@ -574,21 +611,24 @@ export const mockNominees: Nominee[] = [
     id: "int-6-1",
     categoryId: "mas-amado",
     title: "Loxo - Yo mismo me Nominé",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20amado%20del%20grupo%20-%20Luis.jpg",
     order: 1,
   },
   {
     id: "int-6-2",
     categoryId: "mas-amado",
     title: "Jack - Ya no es el mismo de antes :c",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20amado%20del%20grupo%20-%20Jack.jpg",
     order: 2,
   },
   {
     id: "int-6-3",
     categoryId: "mas-amado",
     title: "Mauricio Blanco - Nada que decir",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20amado%20del%20grupo%20-%20Mauricio%20Whites.jpg",
     order: 3,
   },
 
@@ -596,42 +636,48 @@ export const mockNominees: Nominee[] = [
     id: "int-7-1",
     categoryId: "mas-chistoso",
     title: "Xino - Cada que escribe en el grupo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20chistoso%20del%20grupo%20-%20Angel.jpg",
     order: 1,
   },
   {
     id: "int-7-2",
     categoryId: "mas-chistoso",
     title: 'Milver - Según él da risa empezar las palabras con "kk"',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20chistoso%20del%20grupo%20-%20Miuler.jpg",
     order: 2,
   },
   {
     id: "int-7-3",
     categoryId: "mas-chistoso",
     title: 'Milver - Según él si le agrega "god" a cada palabra es gracioso',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20chistoso%20del%20grupo%20-%20Miuler%20x2.jpg",
     order: 3,
   },
   {
     id: "int-7-4",
     categoryId: "mas-chistoso",
     title: "Balto - Hablando con sticker una vez al mes",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20chistoso%20del%20grupo%20-%20Balto.jpg",
     order: 4,
   },
   {
     id: "int-7-5",
     categoryId: "mas-chistoso",
     title: "El Xo - Simplemente Xo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20chistoso%20del%20grupo%20-%20Xo.jpg",
     order: 5,
   },
   {
     id: "int-7-6",
     categoryId: "mas-chistoso",
     title: 'JC Beka - Solo envía monos xingando, dice "cabrón"',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20chistoso%20del%20grupo%20-%20BK.jpg",
     order: 6,
   },
 
@@ -640,14 +686,16 @@ export const mockNominees: Nominee[] = [
     id: "suc-1-1",
     categoryId: "espera-larga",
     title: "Los Awards 2024",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20Espera%20Mas%20Larga%20del%20Ano%20-%20Dinawards.jpg",
     order: 1,
   },
   {
     id: "suc-1-2",
     categoryId: "espera-larga",
     title: "Boxo Yendo a comprar sus pastillas",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20Espera%20Mas%20Larga%20del%20Ano%20-%20Luis.jpg",
     order: 2,
   },
 
@@ -655,21 +703,24 @@ export const mockNominees: Nominee[] = [
     id: "suc-2-1",
     categoryId: "balto-momento",
     title: '"Se fue el internet de Movistar"',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20Balto%20Momento%20del%20Ano%20-%20Internet.jpg",
     order: 1,
   },
   {
     id: "suc-2-2",
     categoryId: "balto-momento",
     title: '"Censar me elevó a otro plano existencial"',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20Balto%20Momento%20del%20Ano%20-%20Censo.jpg",
     order: 2,
   },
   {
     id: "suc-2-3",
     categoryId: "balto-momento",
     title: 'Ñeñe: "1 vs 1 Balto, ¿qué dices?" Balto: "sera 1 vs 0 entonces"',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20Balto%20Momento%20del%20Ano%20-%20Balto%20y%20Nene.jpg",
     order: 3,
   },
 
@@ -684,21 +735,24 @@ export const mockNominees: Nominee[] = [
     id: "suc-3-2",
     categoryId: "viajecito-ano",
     title: "Reno y su flaquita en Cusco",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Viajecito%20del%20ano%20-%20Todos.jpg",
     order: 2,
   },
   {
     id: "suc-3-3",
     categoryId: "viajecito-ano",
     title: "Luxo y su Ex en Huaral",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Viajecito%20del%20ano%20-%20Todos.jpg",
     order: 3,
   },
   {
     id: "suc-3-4",
     categoryId: "viajecito-ano",
     title: "Tzino y Rocha en su Full Day",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Viajecito%20del%20ano%20-%20Todos.jpg",
     order: 4,
   },
 
@@ -706,21 +760,24 @@ export const mockNominees: Nominee[] = [
     id: "suc-4-1",
     categoryId: "enfado-ano",
     title: "Mauricio White vs Miuler",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20Enfado%20del%20Ano%20-%20Miuler%20y%20Mauricio.jpg",
     order: 1,
   },
   {
     id: "suc-4-2",
     categoryId: "enfado-ano",
     title: "Ñeñe vs Reno - Se putearon en el lec",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20Enfado%20del%20Ano%20-%20Renzo%20y%20Nene.jpg",
     order: 2,
   },
   {
     id: "suc-4-3",
     categoryId: "enfado-ano",
     title: "Tzino Puñetino vs Mattos - Creyó que insultó a su viejita xd",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20Enfado%20del%20Ano%20-%20Mattos%20y%20Xino.jpg",
     order: 3,
   },
 
@@ -728,28 +785,32 @@ export const mockNominees: Nominee[] = [
     id: "suc-5-1",
     categoryId: "debatin-ano",
     title: "Xino vs Mattos y Paul - Rojos vs Porky",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Debatin%20del%20Ano%20-%20Xino%20y%20Paul%20por%20Porky.jpg",
     order: 1,
   },
   {
     id: "suc-5-2",
     categoryId: "debatin-ano",
     title: "Xino vs Renzo - Consejos para que Din campeone",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Debatin%20del%20Ano%20-%20Coachs%20de%20Din.jpg",
     order: 2,
   },
   {
     id: "suc-5-3",
     categoryId: "debatin-ano",
     title: "Mauricio Blanco vs El Grupo - Cada que habla Mauricio",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Debatin%20del%20Ano%20-%20Mauricio%20vs%20Todos.jpg",
     order: 3,
   },
   {
     id: "suc-5-4",
     categoryId: "debatin-ano",
     title: "Xino vs Cristian - ¿Xino debería cobrar por la Mesa?",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Debatin%20del%20Ano%20-%20Xino%20y%20Cristian.jpg",
     order: 4,
   },
 
@@ -757,21 +818,24 @@ export const mockNominees: Nominee[] = [
     id: "suc-6-1",
     categoryId: "frase-ano",
     title: '"No es para tanto bro" - Din',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Frase%20o%20Palabra%20del%20Ano%20-%20Todos.jpg",
     order: 1,
   },
   {
     id: "suc-6-2",
     categoryId: "frase-ano",
     title: '"A ver tu brazo Renzo" - Xino Turrones',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Frase%20o%20Palabra%20del%20Ano%20-%20Todos.jpg",
     order: 2,
   },
   {
     id: "suc-6-3",
     categoryId: "frase-ano",
     title: '"Quiero ver la de Adrian" - Xino Turrones',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Frase%20o%20Palabra%20del%20Ano%20-%20Todos.jpg",
     order: 3,
   },
 
@@ -779,35 +843,40 @@ export const mockNominees: Nominee[] = [
     id: "suc-7-1",
     categoryId: "inversion-ano",
     title: "Las Mesas del Xino Turrones",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20inversion%20del%20ano%20-%20Mesas%20del%20Xino.jpg",
     order: 1,
   },
   {
     id: "suc-7-2",
     categoryId: "inversion-ano",
     title: "Las Pesas del Xino Turrones",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20inversion%20del%20ano%20-%20Pesas%20del%20Xino.jpg",
     order: 2,
   },
   {
     id: "suc-7-3",
     categoryId: "inversion-ano",
     title: "La colegiatura de Colugna",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20inversion%20del%20ano%20-%20Colegiatura.jpg",
     order: 3,
   },
   {
     id: "suc-7-4",
     categoryId: "inversion-ano",
     title: "El Mouse de Balto",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20inversion%20del%20ano%20-%20Mouse%20de%20Balto.jpg",
     order: 4,
   },
   {
     id: "suc-7-5",
     categoryId: "inversion-ano",
     title: "Xino comprando dólares y vendiendo cuando baja su precio",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/La%20inversion%20del%20ano%20-%20Xino%20Dolares.jpg",
     order: 5,
   },
 
@@ -816,28 +885,32 @@ export const mockNominees: Nominee[] = [
     id: "mult-1-1",
     categoryId: "estado-ano",
     title: "Baltito preguntando si hay internet",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20estado%20del%20ano%20-%20Balto%20Internet.jpg",
     order: 1,
   },
   {
     id: "mult-1-2",
     categoryId: "estado-ano",
     title: "Mauricio Blacks subiendo fotos con sus hijastros",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20estado%20del%20ano%20-%20Blacks.jpg",
     order: 2,
   },
   {
     id: "mult-1-3",
     categoryId: "estado-ano",
     title: "JK y los Leoncitos FC",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20estado%20del%20ano%20-%20JK.jpg",
     order: 3,
   },
   {
     id: "mult-1-4",
     categoryId: "estado-ano",
     title: "El Xo y sus Amiguitas",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20estado%20del%20ano%20-%20Xo.jpg",
     order: 4,
   },
 
@@ -845,28 +918,32 @@ export const mockNominees: Nominee[] = [
     id: "mult-2-1",
     categoryId: "audio-ano",
     title: '"Noooo, ¿por atras?" - Milver',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/media/Audio%20del%20ano%20-%20Miuler%20por%20atras.mpeg",
     order: 1,
   },
   {
     id: "mult-2-2",
     categoryId: "audio-ano",
     title: '"Te voy a meter un panzaso" - Maurice White a Milver',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/media/audio-ano-otros.ogg",
     order: 2,
   },
   {
     id: "mult-2-3",
     categoryId: "audio-ano",
     title: '"Bueno ya entró balto me quito yo" - Bin',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/media/Audio%20del%20Ano%20-%20LLego%20Balto%20me%20quito.ogg",
     order: 3,
   },
   {
     id: "mult-2-4",
     categoryId: "audio-ano",
     title: '"Hace tiempo no escucho tu voz, ah" - Ñeñe',
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/media/audio-ano-otros.ogg",
     order: 4,
   },
 
@@ -874,50 +951,49 @@ export const mockNominees: Nominee[] = [
     id: "mult-3-1",
     categoryId: "edit-ano",
     title: "Las Desperuanizaciones - Hechos por Pol y Loxo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Edit%20del%20ano%20-%20Desperuanizaciones.jpg",
     order: 1,
   },
   {
     id: "mult-3-2",
     categoryId: "edit-ano",
     title: "Lucho saliendo de su casa como boomer - Hecho por Xino",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/media/Edit%20del%20ano%20-%20Luxo%20Boomer.mp4",
     order: 2,
   },
   {
     id: "mult-3-3",
     categoryId: "edit-ano",
     title: "Xino Shipibo (su ropa de todos los dias) - Hecho por Luxo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Edit%20del%20ano%20-%20Xino%20Selva.jpg",
     order: 3,
   },
 
   {
-    id: "mult-4-1",
-    categoryId: "sticker-original",
-    title: "Luxo Whites - Hecho por Anónimo",
-    imageUrl: "",
-    order: 1,
-  },
-  {
     id: "mult-4-2",
     categoryId: "sticker-original",
     title: "Las Desperuanizaciones - Hechos por Pol y Loxo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Sticker%20Original%20del%20Ano%20-%20Desperuanizaciones.jpg",
     order: 2,
   },
   {
     id: "mult-4-3",
     categoryId: "sticker-original",
     title: "Tzino el Hamburguesero - Hecho por Luxo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Sticker%20Original%20del%20Ano%20-%20Xino%20Hamburguesa.jpg",
     order: 3,
   },
   {
     id: "mult-4-4",
     categoryId: "sticker-original",
     title: "Mauricio Whites Modo Luxo - Hecho por Anónimo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Sticker%20Original%20del%20Ano%20-%20White%20modo%20Luxo.jpg",
     order: 4,
   },
 
@@ -925,49 +1001,56 @@ export const mockNominees: Nominee[] = [
     id: "mult-5-1",
     categoryId: "sticker-desperuanizado",
     title: "Columba Desperuanizado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20sticker%20Desperuanizado%20del%20Ano%20-%20Columba.jpg",
     order: 1,
   },
   {
     id: "mult-5-2",
     categoryId: "sticker-desperuanizado",
     title: "Miuler Desperuanizado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20sticker%20Desperuanizado%20del%20Ano%20-%20Miuler.jpg",
     order: 2,
   },
   {
     id: "mult-5-3",
     categoryId: "sticker-desperuanizado",
     title: "Paul Desperuanizado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20sticker%20Desperuanizado%20del%20Ano%20-%20Paul.jpg",
     order: 3,
   },
   {
     id: "mult-5-4",
     categoryId: "sticker-desperuanizado",
     title: "Chorlos Desperuanizado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20sticker%20Desperuanizado%20del%20Ano%20-%20Carlos.jpg",
     order: 4,
   },
   {
     id: "mult-5-5",
     categoryId: "sticker-desperuanizado",
     title: "Xino Desperuanizado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20sticker%20Desperuanizado%20del%20Ano%20-%20Xino.jpg",
     order: 5,
   },
   {
     id: "mult-5-6",
     categoryId: "sticker-desperuanizado",
     title: "Mauricio Blacks Desperuanizado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20sticker%20Desperuanizado%20del%20Ano%20-%20Mauricio.jpg",
     order: 6,
   },
   {
     id: "mult-5-7",
     categoryId: "sticker-desperuanizado",
     title: "Arek Juárez Desperuanizado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20sticker%20Desperuanizado%20del%20Ano%20-%20Xuxi.jpg",
     order: 7,
   },
 
@@ -976,14 +1059,16 @@ export const mockNominees: Nominee[] = [
     id: "dat-1-1",
     categoryId: "chamba-revelacion",
     title: "Censador",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Chamba%20revelacion%20del%20ano%20-%20Censista.jpg",
     order: 1,
   },
   {
     id: "dat-1-2",
     categoryId: "chamba-revelacion",
     title: "Supervisor de Censadores",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Chamba%20revelacion%20del%20ano%20-%20Supervisor%20de%20Censistas.jpg",
     order: 2,
   },
 
@@ -991,21 +1076,24 @@ export const mockNominees: Nominee[] = [
     id: "dat-2-1",
     categoryId: "mejor-datazo",
     title: "Loxo se fue a Huamasexo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mejor%20Datazo%20-%20Luxo.jpg",
     order: 1,
   },
   {
     id: "dat-2-2",
     categoryId: "mejor-datazo",
     title: "Las 999+ Obras de Porky",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mejor%20Datazo%20-%20Pol%20x%20Porky.jpg",
     order: 2,
   },
   {
     id: "dat-2-3",
     categoryId: "mejor-datazo",
     title: "Xino couch del din para que se infle",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mejor%20Datazo%20-%20Angel%20Coach.jpg",
     order: 3,
   },
 
@@ -1013,21 +1101,24 @@ export const mockNominees: Nominee[] = [
     id: "dat-3-1",
     categoryId: "mas-explotado-chamba",
     title: "Balto Censando en Conos",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20explotado%20en%20la%20Chamba%20-%20Balto%20Censista.jpg",
     order: 1,
   },
   {
     id: "dat-3-2",
     categoryId: "mas-explotado-chamba",
     title: "Luxo en Pacasmayo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20explotado%20en%20la%20Chamba%20-%20Luxo.jpg",
     order: 2,
   },
   {
     id: "dat-3-3",
     categoryId: "mas-explotado-chamba",
     title: "Balto en cualquier chamba",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20mas%20explotado%20en%20la%20Chamba%20-%20Balto%20Todo%20Trabajo.jpg",
     order: 3,
   },
 
@@ -1035,28 +1126,32 @@ export const mockNominees: Nominee[] = [
     id: "dat-4-1",
     categoryId: "menos-chambeador",
     title: "Loxo/Reno/Cristian - Trío de Dateros",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20menos%20chambeador%20del%20ano%20-%20Luxo%20Reno%20Xuxi.jpg",
     order: 1,
   },
   {
     id: "dat-4-2",
     categoryId: "menos-chambeador",
     title: "Columba - El Colegiado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20menos%20chambeador%20del%20ano%20-%20Columba.jpg",
     order: 2,
   },
   {
     id: "dat-4-3",
     categoryId: "menos-chambeador",
     title: "Loxo - En cualquier chamba",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20menos%20chambeador%20del%20ano%20-%20Luxo%20Cualquier%20Chamba.jpg",
     order: 3,
   },
   {
     id: "dat-4-4",
     categoryId: "menos-chambeador",
     title: "Xino - Desempleado en MAF",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20menos%20chambeador%20del%20ano%20-%20Xino.jpg",
     order: 4,
   },
 
@@ -1065,28 +1160,32 @@ export const mockNominees: Nominee[] = [
     id: "dest-1-1",
     categoryId: "goty-ano",
     title: "L4D2 - Siempre en los corazones",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/GOTY%20Of%20The%20Year%20Del%20Ano%20-%20L4D2.jpg",
     order: 1,
   },
   {
     id: "dest-1-2",
     categoryId: "goty-ano",
     title: "Counter Strike 2 - Crea Sala Reno",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/GOTY%20Of%20The%20Year%20Del%20Ano%20-%20Counter%20Strike.jpg",
     order: 2,
   },
   {
     id: "dest-1-3",
     categoryId: "goty-ano",
     title: "Destiny Rising - Discriminadores en Calamidad",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/GOTY%20Of%20The%20Year%20Del%20Ano%20-%20Destiny.jpg",
     order: 3,
   },
   {
     id: "dest-1-4",
     categoryId: "goty-ano",
     title: "Peak - Simplemente Peak",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/GOTY%20Of%20The%20Year%20Del%20Ano%20-%20Peak.jpg",
     order: 4,
   },
 
@@ -1094,35 +1193,40 @@ export const mockNominees: Nominee[] = [
     id: "dest-2-1",
     categoryId: "mejor-nickname",
     title: "Camposol",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mejor%20Nickname%20-%20Todos.jpg",
     order: 1,
   },
   {
     id: "dest-2-2",
     categoryId: "mejor-nickname",
     title: "Xeppa",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mejor%20Nickname%20-%20Todos.jpg",
     order: 2,
   },
   {
     id: "dest-2-3",
     categoryId: "mejor-nickname",
     title: "Arek",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mejor%20Nickname%20-%20Todos.jpg",
     order: 3,
   },
   {
     id: "dest-2-4",
     categoryId: "mejor-nickname",
     title: "Solitario de Sayán",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mejor%20Nickname%20-%20Todos.jpg",
     order: 4,
   },
   {
     id: "dest-2-5",
     categoryId: "mejor-nickname",
     title: "Puñetino",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mejor%20Nickname%20-%20Todos.jpg",
     order: 5,
   },
 
@@ -1130,35 +1234,40 @@ export const mockNominees: Nominee[] = [
     id: "dest-3-1",
     categoryId: "arrexino-ano",
     title: "Marcos Becerro - Cieneguilla",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ArreXino%20del%20Ano%20-%20Marco.jpg",
     order: 1,
   },
   {
     id: "dest-3-2",
     categoryId: "arrexino-ano",
     title: "Xino - Tetas y Culo",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ArreXino%20del%20Ano%20-%20Xino.jpg",
     order: 2,
   },
   {
     id: "dest-3-3",
     categoryId: "arrexino-ano",
     title: "Jotasex - Pidiendo IG",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ArreXino%20del%20Ano%20-%20Jsex.jpg",
     order: 3,
   },
   {
     id: "dest-3-4",
     categoryId: "arrexino-ano",
     title: "Din - En cualquier contexto",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ArreXino%20del%20Ano%20-%20Din.jpg",
     order: 4,
   },
   {
     id: "dest-3-5",
     categoryId: "arrexino-ano",
     title: "Mauricio Blacks - Con la madre de sus hijastros",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ArreXino%20del%20Ano%20-%20Mauricio.jpg",
     order: 5,
   },
 
@@ -1166,21 +1275,24 @@ export const mockNominees: Nominee[] = [
     id: "dest-4-1",
     categoryId: "mecatronico-ano",
     title: "Columba - El Colegiado",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mecatronico%20del%20Ano%20-%20Columba.jpg",
     order: 1,
   },
   {
     id: "dest-4-2",
     categoryId: "mecatronico-ano",
     title: "Xino Terrones - El que no termina el colegio",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mecatronico%20del%20Ano%20-%20Xino.jpg",
     order: 2,
   },
   {
     id: "dest-4-3",
     categoryId: "mecatronico-ano",
     title: "Balto Censos - Automatizador de Censos",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Mecatronico%20del%20Ano%20-%20Balto.jpg",
     order: 3,
   },
 
@@ -1188,49 +1300,56 @@ export const mockNominees: Nominee[] = [
     id: "dest-5-1",
     categoryId: "datero-ano",
     title: "Dayner - Data Engineer",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Datero%20del%20Ano%20-%20Nene.jpg",
     order: 1,
   },
   {
     id: "dest-5-2",
     categoryId: "datero-ano",
     title: "Loxo - Data Scientist",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Datero%20del%20Ano%20-%20Luxo.jpg",
     order: 2,
   },
   {
     id: "dest-5-3",
     categoryId: "datero-ano",
     title: "Paul - Data Engineer",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Datero%20del%20Ano%20-%20Paul.jpg",
     order: 3,
   },
   {
     id: "dest-5-4",
     categoryId: "datero-ano",
     title: "Xuxi - Data Engineer",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Datero%20del%20Ano%20-%20Xuxi.jpg",
     order: 4,
   },
   {
     id: "dest-5-5",
     categoryId: "datero-ano",
     title: "Xino - Data Scientist",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Datero%20del%20Ano%20-%20Xino.jpg",
     order: 5,
   },
   {
     id: "dest-5-6",
     categoryId: "datero-ano",
     title: "Reno - Data Scientist",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Datero%20del%20Ano%20-%20Reno.jpg",
     order: 6,
   },
   {
     id: "dest-5-7",
     categoryId: "datero-ano",
     title: "Mattos - Data Engineer",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Datero%20del%20Ano%20-%20Bryan.jpg",
     order: 7,
   },
 
@@ -1238,35 +1357,40 @@ export const mockNominees: Nominee[] = [
     id: "dest-6-1",
     categoryId: "ausente-grupo",
     title: "Juárez - Está Jugando Dota 2",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ausente%20del%20grupo%20-%20David.jpg",
     order: 1,
   },
   {
     id: "dest-6-2",
     categoryId: "ausente-grupo",
     title: "Balto - Está Censando en Tangamandapio",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ausente%20del%20grupo%20-%20Balto.jpg",
     order: 2,
   },
   {
     id: "dest-6-3",
     categoryId: "ausente-grupo",
     title: "El Andy Firme Chinchaihuara - ¿Donde está?",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ausente%20del%20grupo%20-%20Andy.jpg",
     order: 3,
   },
   {
     id: "dest-6-4",
     categoryId: "ausente-grupo",
     title: "El Andy Bamba - Ta en el Gym",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ausente%20del%20grupo%20-%20Chinchaihuara.jpg",
     order: 4,
   },
   {
     id: "dest-6-5",
     categoryId: "ausente-grupo",
     title: "El Ingeniero Bel - Automatizando en el VRAEM",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/El%20ausente%20del%20grupo%20-%20Bel.jpg",
     order: 5,
   },
 
@@ -1274,28 +1398,32 @@ export const mockNominees: Nominee[] = [
     id: "dest-7-1",
     categoryId: "integrante-destacado",
     title: "Mauricio Whites - Edgy",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Integrante%20Destacado%20del%20Ano%20-%20Mauricio.jpg",
     order: 1,
   },
   {
     id: "dest-7-2",
     categoryId: "integrante-destacado",
     title: "Loxo Zote - A dieta",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Integrante%20Destacado%20del%20Ano%20-%20Luxo.jpg",
     order: 2,
   },
   {
     id: "dest-7-3",
     categoryId: "integrante-destacado",
     title: "TzinoTurrones - En esteroides",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Integrante%20Destacado%20del%20Ano%20-%20Xino.jpg",
     order: 3,
   },
   {
     id: "dest-7-4",
     categoryId: "integrante-destacado",
     title: "Marco ¿Becerra? o Toro - Arrecho en instagram",
-    imageUrl: "",
+    imageUrl:
+      "https://okxiwlwzunrupqlpthwt.supabase.co/storage/v1/object/public/assets/images/Integrante%20Destacado%20del%20Ano%20-%20Marco.jpg",
     order: 4,
   },
 ];
